@@ -95,6 +95,10 @@
 
   # Set default editor to helix
   environment.variables.EDITOR = "hx";
+  environment.sessionVariables = {
+    # Hint for Electron apps to use Wayland
+    NIXOS_OZONE_WL = "1";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
