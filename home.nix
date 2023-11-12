@@ -40,6 +40,9 @@
           drag_lock = true;
         };
       };
+      binds = {
+        workspace_back_and_forth = true;
+      };
       "$mod" = "SUPER";
       bind = [
         "$mod, Q, exec, kitty"
