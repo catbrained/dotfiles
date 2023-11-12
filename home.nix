@@ -77,6 +77,8 @@
         "$mod_SHIFT, 7, movetoworkspacesilent, 7"
         "$mod_SHIFT, 9, movetoworkspacesilent, 9"
         "$mod_SHIFT, 0, movetoworkspacesilent, 10"
+        "$mod, F, fullscreen, 1" # maximize window (keep bar and gaps)
+        "$mod_SHIFT, F, fullscreen, 0" # fullscreen
       ];
     };
   };
