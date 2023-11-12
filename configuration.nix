@@ -40,8 +40,7 @@
   console = {
     # Let the kernel pick a suitable font depending on resolution
     font = null;
-    keyMap = "de-latin1-nodeadkeys";
-    useXkbConfig = false; # use xkbOptions in tty.
+    useXkbConfig = true; # use xkbOptions in tty.
   };
 
   # Configure keymap in X11
