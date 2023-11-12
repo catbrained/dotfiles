@@ -36,6 +36,7 @@
         numlock_by_default = true;
         touchpad = {
           natural_scroll = true;
+          tap-and-drag = true;
         };
       };
       "$mod" = "SUPER";
