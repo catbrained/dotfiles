@@ -33,6 +33,7 @@
         # Make caps lock an additional esc,
         # both shifts together enable caps lock
         kb_options = "caps:escape,shift:both_capslock";
+        numlock_by_default = true;
       };
       "$mod" = "SUPER";
       bind = [
