@@ -14,7 +14,7 @@
       # XXX: The HM module does not yet support ssh signing
       commit.gpgSign = true;
       tag.gpgSign = true;
-      user.signingKey = "/home/linda/.ssh/id_ed25519.pub";
+      user.signingKey = "key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIAsoKQZS3EtdVd/wdw+m30ZAe5shaz1R+HENhwaVcHs linda@catbrained.dev";
       gpg.format = "ssh";
     };
   };
