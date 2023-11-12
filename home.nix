@@ -34,6 +34,9 @@
         # both shifts together enable caps lock
         kb_options = "caps:escape,shift:both_capslock";
         numlock_by_default = true;
+        touchpad = {
+          natural_scroll = true;
+        };
       };
       "$mod" = "SUPER";
       bind = [
