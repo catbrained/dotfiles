@@ -29,6 +29,7 @@
     settings = {
       input = {
         kb_layout = "de";
+        kb_variant = "nodeadkeys";
       };
       "$mod" = "SUPER";
       bind = [
