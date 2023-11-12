@@ -48,6 +48,8 @@
   services.xserver = {
     layout = "de";
     xkbVariant = "nodeadkeys";
+    # Make caps lock an additional esc, both shifts together enable caps lock
+    xkbOptions = "caps:escape,shift:both_capslock";
   };
 
   # Enable CUPS to print documents.
