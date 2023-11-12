@@ -43,6 +43,9 @@
       binds = {
         workspace_back_and_forth = true;
       };
+      gestures = {
+        workspace_swipe = true;
+      };
       "$mod" = "SUPER";
       bind = [
         "$mod, Q, exec, kitty"
