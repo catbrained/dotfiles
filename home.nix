@@ -30,6 +30,9 @@
       input = {
         kb_layout = "de";
         kb_variant = "nodeadkeys";
+        # Make caps lock an additional esc,
+        # both shifts together enable caps lock
+        kb_options = "caps:escape,shift:both_capslock";
       };
       "$mod" = "SUPER";
       bind = [
