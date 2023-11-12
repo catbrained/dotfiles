@@ -64,6 +64,19 @@
         "$mod, 7, workspace, 7"
         "$mod, 9, workspace, 9"
         "$mod, 0, workspace, 10"
+        "$mod_SHIFT, H, movewindow, l"
+        "$mod_SHIFT, L, movewindow, r"
+        "$mod_SHIFT, J, movewindow, d"
+        "$mod_SHIFT, K, movewindow, u"
+        "$mod_SHIFT, 1, movetoworkspacesilent, 1"
+        "$mod_SHIFT, 2, movetoworkspacesilent, 2"
+        "$mod_SHIFT, 3, movetoworkspacesilent, 3"
+        "$mod_SHIFT, 4, movetoworkspacesilent, 4"
+        "$mod_SHIFT, 5, movetoworkspacesilent, 5"
+        "$mod_SHIFT, 6, movetoworkspacesilent, 6"
+        "$mod_SHIFT, 7, movetoworkspacesilent, 7"
+        "$mod_SHIFT, 9, movetoworkspacesilent, 9"
+        "$mod_SHIFT, 0, movetoworkspacesilent, 10"
       ];
     };
   };
