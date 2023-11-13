@@ -101,6 +101,7 @@
         "+" = {
           g = {
             s = ":run-shell-command git status";
+            l = ":run-shell-command git log --oneline";
           };
         };
       };
