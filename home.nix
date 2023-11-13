@@ -37,6 +37,30 @@
     enable = true;
   };
 
+  # Helix editor
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+    extraPackages = [
+      pkgs.nil # LSP for Nix
+      pkgs.nixpkgs-fmt # Formatter for Nix
+    ];
+    languages = {
+      language = [
+        {
+          name = "nix";
+          auto-format = true;
+          formatter = {
+            command = "nixpkgs-fmt";
+          };
+        }
+      ];
+    };
+    settings = {
+      theme = "catppuccin_mocha";
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
