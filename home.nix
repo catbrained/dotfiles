@@ -61,14 +61,16 @@
       editor = {
         line-number = "relative";
         cursorline = true;
+        color-modes = true;
         statusline = {
           left = [
             "mode"
+            "spacer"
             "version-control"
+            "spacer"
             "file-name"
             "read-only-indicator"
             "file-modification-indicator"
-            "file-type"
           ];
           center = [
             "spinner"
@@ -81,6 +83,7 @@
             "register"
             "position"
             "total-line-numbers"
+            "file-type"
             "file-encoding"
           ];
         };
