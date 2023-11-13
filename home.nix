@@ -97,7 +97,7 @@
         };
       };
       keys.normal = {
-        "A-S-|" = "shell_pipe_to";
+        "A-<" = "shell_pipe_to";
         "+" = {
           g = {
             s = ":run-shell-command git status";
