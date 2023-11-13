@@ -4,6 +4,14 @@
   home.username = "linda";
   home.homeDirectory = "/home/linda";
 
+  # For some reason Home Manager fails to load env vars correctly.
+  # This means things like $SSH_AUTH_SOCK won't be available.
+  # This block is a workaround for this issue.
+  # See: https://github.com/nix-community/home-manager/issues/3263#issuecomment-1505801395
+  home.file.".profile".text = ''
+    . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
+  '';
+
   programs.git = {
     enable = true;
     userEmail = "linda@catbrained.dev";
@@ -100,7 +108,13 @@
   programs.ssh = {
     enable = true;
     forwardAgent = false;
+    extraConfig = ''
+      AddKeysToAgent confirm 20m
+      PasswordAuthentication no
+    '';
   };
+
+  services.ssh-agent.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
