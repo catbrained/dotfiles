@@ -81,7 +81,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-    pkgs.vim 
+    pkgs.vim
     pkgs.wget
     pkgs.curl
     pkgs.helix # Editor
