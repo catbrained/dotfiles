@@ -58,6 +58,52 @@
     };
     settings = {
       theme = "catppuccin_mocha";
+      editor = {
+        line-number = "relative";
+        cursorline = true;
+        statusline = {
+          left = [
+            "mode"
+            "version-control"
+            "file-name"
+            "read-only-indicator"
+            "file-modification-indicator"
+            "file-type"
+          ];
+          center = [
+            "spinner"
+            "diagnostics"
+            "workspace-diagnostics"
+          ];
+          right = [
+            "selections"
+            "primary-selection-length"
+            "register"
+            "position"
+            "total-line-numbers"
+            "file-encoding"
+          ];
+        };
+        lsp = {
+          display-messages = true;
+          display-inlay-hints = true;
+        };
+        indent-guides = {
+          render = true;
+          skip-levels = 1;
+        };
+        soft-wrap = {
+          enable = true;
+        };
+      };
+      keys.normal = {
+        "A-S-|" = "shell_pipe_to";
+        "+" = {
+          g = {
+            s = ":run-shell-command git status";
+          };
+        };
+      };
     };
   };
 
