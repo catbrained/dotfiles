@@ -3,6 +3,9 @@
 {
   home.username = "linda";
   home.homeDirectory = "/home/linda";
+  home.packages = [
+    pkgs.libnotify
+  ];
 
   # For some reason Home Manager fails to load env vars correctly.
   # This means things like $SSH_AUTH_SOCK won't be available.
