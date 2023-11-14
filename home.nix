@@ -137,6 +137,7 @@
       };
       misc = {
         animate_manual_resizes = true;
+        animate_mouse_windowdragging = true;
       };
       binds = {
         workspace_back_and_forth = true;
