@@ -132,6 +132,9 @@
           drag_lock = true;
         };
       };
+      general = {
+        resize_on_border = true;
+      };
       binds = {
         workspace_back_and_forth = true;
       };
