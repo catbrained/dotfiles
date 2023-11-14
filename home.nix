@@ -135,6 +135,9 @@
       general = {
         resize_on_border = true;
       };
+      misc = {
+        animate_manual_resizes = true;
+      };
       binds = {
         workspace_back_and_forth = true;
       };
