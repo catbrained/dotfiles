@@ -182,6 +182,11 @@
     };
   };
 
+  # Notification daemon
+  services.dunst = {
+    enable = true;
+  };
+
   programs.firefox = {
     enable = true;
   };
