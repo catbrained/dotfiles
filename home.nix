@@ -49,6 +49,7 @@
     extraPackages = [
       pkgs.nil # LSP for Nix
       pkgs.nixpkgs-fmt # Formatter for Nix
+      pkgs.nodePackages_latest.bash-language-server
     ];
     languages = {
       language = [
