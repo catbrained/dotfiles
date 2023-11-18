@@ -6,6 +6,7 @@
   home.packages = [
     pkgs.libnotify
     pkgs.jq # json utility
+    pkgs.socat # socket communication utility
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
