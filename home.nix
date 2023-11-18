@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/linda";
   home.packages = [
     pkgs.libnotify
+    pkgs.jq # json utility
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
