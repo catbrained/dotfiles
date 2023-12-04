@@ -18,6 +18,13 @@
       # Save disk space by using hardlinks for identical files in the store
       auto-optimise-store = true;
     };
+    # Garbage collection
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      randomizedDelaySec = "30min";
+      options = "--delete-older-than 1w";
+    };
   };
 
   boot = {
