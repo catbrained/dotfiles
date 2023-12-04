@@ -58,7 +58,43 @@
   networking.hostName = "quasar"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  # networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+
+  # Simple networking configuration based on a succinct blog post and, of course, the Arch Wiki.
+  # See: https://insanity.industries/post/simple-networking/
+  networking.useNetworkd = true;
+  systemd.network = {
+    enable = true;
+    links = {
+      "00-wifi" = {
+        matchConfig = {
+          # This is the interface I want to configure
+          MACAddress = "14:5a:fc:16:8b:cf";
+        };
+        linkConfig = {
+          # This is the name I want the interface to have
+          Name = "wifi0";
+        };
+      };
+
+    };
+  };
+  networking.wireless.iwd = {
+    # Use iwd as wireless backend
+    enable = true;
+    settings = {
+      General = {
+        # Allows us to set the interface name ourselves.
+        # See the above section `systemd.network.links` for setting the name.
+        UseDefaultInterface = true;
+        # Enable builtin DHCP client
+        EnableNetworkConfiguration = true;
+        # Randomize MAC address every time iwd starts or the hardware is initially detected.
+        AddressRandomization = "once";
+      };
+    };
+  };
+  services.resolved.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
