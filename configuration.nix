@@ -118,10 +118,12 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "de";
-    xkbVariant = "nodeadkeys";
-    # Make caps lock an additional esc, both shifts together enable caps lock
-    xkbOptions = "caps:escape,shift:both_capslock";
+    xkb = {
+      layout = "de";
+      variant = "nodeadkeys";
+      # Make caps lock an additional esc, both shifts together enable caps lock
+      options = "caps:escape,shift:both_capslock";
+    };
   };
 
   # Enable CUPS to print documents.
@@ -215,6 +217,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
