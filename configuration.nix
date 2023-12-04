@@ -50,6 +50,9 @@
       configurationLimit = 10;
     };
     loader.efi.canTouchEfiVariables = true;
+    initrd.systemd = {
+      enable = true;
+    };
   };
 
   networking.hostName = "quasar"; # Define your hostname.
