@@ -36,6 +36,11 @@
     # Warning: Large Nix builds may fail if the tmpfs is too small!
     tmp.useTmpfs = true;
     kernelPackages = pkgs.linuxPackages_latest;
+    # Boot splash screen
+    plymouth = {
+      enable = true;
+      theme = "breeze";
+    };
     loader.systemd-boot = {
       # Use the systemd-boot EFI boot loader.
       enable = true;
