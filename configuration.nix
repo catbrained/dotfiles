@@ -38,6 +38,8 @@
       enable = true;
       # Do not allow editing the kernel command-line before boot
       editor = false;
+      # Limit number of NixOS generations available at boot to prevent running out of space
+      configurationLimit = 10;
     };
     loader.efi.canTouchEfiVariables = true;
   };
