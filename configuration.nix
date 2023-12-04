@@ -23,6 +23,8 @@
     loader.systemd-boot = {
       # Use the systemd-boot EFI boot loader.
       enable = true;
+      # Do not allow editing the kernel command-line before boot
+      editor = false;
     };
     loader.efi.canTouchEfiVariables = true;
   };
