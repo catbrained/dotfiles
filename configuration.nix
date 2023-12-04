@@ -11,8 +11,14 @@
       ./hardware-configuration.nix
     ];
 
-  # Enable flakes and the new nix commands
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings = {
+      # Enable flakes and the new nix commands
+      experimental-features = [ "nix-command" "flakes" ];
+      # Save disk space by using hardlinks for identical files in the store
+      auto-optimise-store = true;
+    };
+  };
 
   boot = {
     # Delete all files in /tmp during boot
