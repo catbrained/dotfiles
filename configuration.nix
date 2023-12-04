@@ -59,6 +59,8 @@
     enable = true;
     pulse.enable = true;
   };
+  # The PulseAudio server uses this to acquire realtime priority
+  security.rtkit.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
