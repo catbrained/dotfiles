@@ -18,6 +18,8 @@
       # Save disk space by using hardlinks for identical files in the store
       auto-optimise-store = true;
     };
+    # I'm using flakes, so I don't need this, right?
+    channel.enable = false;
     # Garbage collection
     gc = {
       automatic = true;
