@@ -14,9 +14,18 @@
   # Enable flakes and the new nix commands
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    # Delete all files in /tmp during boot
+    # tmp.cleanOnBoot = true;
+    # Mount a tmpfs on /tmp
+    # Warning: Large Nix builds may fail if the tmpfs is too small!
+    tmp.useTmpfs = true;
+    loader.systemd-boot = {
+      # Use the systemd-boot EFI boot loader.
+      enable = true;
+    };
+    loader.efi.canTouchEfiVariables = true;
+  };
 
   networking.hostName = "quasar"; # Define your hostname.
   # Pick only one of the below networking options.
