@@ -39,7 +39,8 @@
     # Boot splash screen
     plymouth = {
       enable = true;
-      theme = "breeze";
+      themePackages = [ (pkgs.catppuccin-plymouth.override { variant = "mocha"; }) ];
+      theme = "catppuccin-mocha";
     };
     loader.systemd-boot = {
       # Use the systemd-boot EFI boot loader.
