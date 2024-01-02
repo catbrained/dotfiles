@@ -7,6 +7,7 @@
     pkgs.libnotify
     pkgs.jq # json utility
     pkgs.socat # socket communication utility
+    pkgs.wl-clipboard
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
