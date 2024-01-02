@@ -200,6 +200,11 @@
     enable = true;
   };
 
+  # image viewer
+  programs.imv = {
+    enable = true;
+  };
+
   programs.ssh = {
     enable = true;
     forwardAgent = false;
