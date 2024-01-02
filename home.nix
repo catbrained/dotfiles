@@ -205,6 +205,10 @@
     enable = true;
   };
 
+  programs.mpv = {
+    enable = true;
+  };
+
   programs.ssh = {
     enable = true;
     forwardAgent = false;
