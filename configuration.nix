@@ -164,6 +164,7 @@
     pkgs.vim
     pkgs.wget
     pkgs.curl
+    pkgs.file
     pkgs.helix # Editor
     pkgs.git
     pkgs.nil # LSP for Nix
