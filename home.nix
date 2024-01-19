@@ -170,6 +170,10 @@
         ", XF86MonBrightnessDown, exec, brightnessctl set 2%-"
       ];
       bind = [
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioStop, exec, playerctl stop"
+        ", XF86AudioPrev, exec, playerctl previous"
+        ", XF86AudioNext, exec, playerctl next"
         "$mod, Q, exec, kitty"
         "$mod, C, killactive"
         "$mod, M, exit"
