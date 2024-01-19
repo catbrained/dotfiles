@@ -156,6 +156,11 @@
         workspace_swipe = true;
       };
       "$mod" = "SUPER";
+      # Keybinds that work while the screen is locked, and that allow press and hold
+      bindel = [
+        ", XF86MonBrightnessUp, exec, brightnessctl set +2%"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 2%-"
+      ];
       bind = [
         "$mod, Q, exec, kitty"
         "$mod, C, killactive"
