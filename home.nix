@@ -33,6 +33,7 @@
       user.signingKey = "~/.ssh/id_ed25519";
       gpg.format = "ssh";
       gpg.ssh.allowedSignersFile = "~/.config/git/allowed_signers";
+      pull.rebase = true;
     };
   };
 
