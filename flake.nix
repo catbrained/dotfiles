@@ -10,11 +10,22 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let
+      # List of packages with unfree licenses that are allowed
+      allowedUnfree = [
+        "discord"
+      ];
+    in
+    {
     nixosConfigurations = {
       "quasar" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          {
+            nixpkgs.config.allowUnfreePredicate = pkg:
+              builtins.elem (nixpkgs.lib.getName pkg) allowedUnfree;
+          }
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {

@@ -10,6 +10,7 @@
     pkgs.wl-clipboard
     pkgs.brightnessctl
     pkgs.playerctl
+    pkgs.discord
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
