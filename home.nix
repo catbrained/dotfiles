@@ -41,6 +41,15 @@
     linda@catbrained.dev ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIAsoKQZS3EtdVd/wdw+m30ZAe5shaz1R+HENhwaVcHs linda@catbrained.dev
   '';
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
+  programs.bash = {
+    enable = true;
+  };
+
   # Terminal emulator
   programs.kitty = {
     enable = true;
