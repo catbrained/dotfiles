@@ -30,7 +30,8 @@
             # Make `nix repl '<nixpkgs>'` use the same nixpkgs as this flake
             # See: https://nixos-and-flakes.thiscute.world/best-practices/nix-path-and-flake-registry#custom-nix-path-and-flake-registry-1
             environment.etc."nix/inputs/nixpkgs".source = "${nixpkgs}";
-            nix.nixPath = [ "/etc/nix/inputs" ];
+            # See: https://github.com/NixOS/nix/issues/9574
+            nix.settings.nix-path = nixpkgs.lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
 
           }
         ];
