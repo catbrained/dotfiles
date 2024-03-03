@@ -174,6 +174,15 @@
         workspace_swipe = true;
       };
       "$mod" = "SUPER";
+      # Mouse binds
+      bindm = [
+        "$mod, mouse:272, movewindow"
+      ];
+      # Keybinds that can be held
+      binde = [
+        "$mod, Tab, cyclenext" # Focus next window in workspace
+        "$mod_SHIFT, Tab, cyclenext, prev" # focus previous window in workspace
+      ];
       # Keybinds that work while the screen is locked
       bindl = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -191,7 +200,7 @@
         ", XF86AudioStop, exec, playerctl stop"
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioNext, exec, playerctl next"
-        "$mod, Q, exec, kitty"
+        "$mod, Return, exec, kitty --single-instance"
         "$mod, C, killactive"
         "$mod, M, exit"
         "$mod, H, movefocus, l"
@@ -222,6 +231,8 @@
         "$mod_SHIFT, 0, movetoworkspacesilent, 10"
         "$mod, F, fullscreen, 1" # maximize window (keep bar and gaps)
         "$mod_SHIFT, F, fullscreen, 0" # fullscreen
+        "$mod, P, pin, active"
+        "$mod_SHIFT, Space, togglefloating, active"
       ];
     };
   };
