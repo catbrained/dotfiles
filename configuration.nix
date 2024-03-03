@@ -168,6 +168,10 @@
     DEFAULT_HOME = "no";
   };
 
+  # PAM must be configured to enable swaylock to perform authentication.
+  # The home-manager package will not be able to unlock the session without this.
+  security.pam.services.swaylock = { };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
