@@ -234,6 +234,9 @@
         "$mod, P, pin, active"
         "$mod_SHIFT, Space, togglefloating, active"
       ];
+      windowrulev2 = [
+        "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
+      ];
     };
   };
 
