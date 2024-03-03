@@ -56,6 +56,12 @@
     enable = true;
   };
 
+  # Shell prompt
+  programs.starship = {
+    enable = true;
+    settings = { };
+  };
+
   # Terminal emulator
   programs.kitty = {
     enable = true;
