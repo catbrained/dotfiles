@@ -51,6 +51,11 @@
     enable = true;
   };
 
+  # The friendly interactive shell
+  programs.fish = {
+    enable = true;
+  };
+
   # Terminal emulator
   programs.kitty = {
     enable = true;

@@ -147,6 +147,9 @@
     uid = 1000;
     group = "linda";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.fish;
+    # fish is enabled via home-manager
+    ignoreShellProgramCheck = true;
     packages = [ ];
   };
   users.groups.linda = {
