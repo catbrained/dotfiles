@@ -127,6 +127,13 @@
     };
   };
 
+  fonts = {
+    enableDefaultPackages = true;
+    packages = [
+      pkgs.iosevka
+    ];
+  };
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
