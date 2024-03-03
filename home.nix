@@ -59,6 +59,7 @@
   # Terminal emulator
   programs.kitty = {
     enable = true;
+    theme = "Catppuccin-Mocha";
   };
 
   # Helix editor
