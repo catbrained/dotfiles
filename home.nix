@@ -66,6 +66,13 @@
   programs.kitty = {
     enable = true;
     theme = "Catppuccin-Mocha";
+    settings = {
+      font_family = "Iosevka";
+      bold_font = "Iosevka Bold";
+      italic_font = "Iosevka Italic";
+      bold_italic_font = "Iosevka Bold Italic";
+      font_size = 12;
+    };
   };
 
   # Helix editor
