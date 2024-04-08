@@ -11,6 +11,7 @@
     pkgs.brightnessctl
     pkgs.playerctl
     pkgs.discord
+    pkgs.element-desktop
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
