@@ -12,6 +12,7 @@
     pkgs.playerctl
     pkgs.discord
     pkgs.element-desktop
+    pkgs.inkscape
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
