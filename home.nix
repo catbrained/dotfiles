@@ -13,6 +13,7 @@
     pkgs.discord
     pkgs.element-desktop
     pkgs.inkscape
+    pkgs.gimp
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
