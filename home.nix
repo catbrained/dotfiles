@@ -198,6 +198,10 @@
             l = ":run-shell-command git log --oneline";
           };
         };
+        "space" = {
+          u = ":update";
+          q = ":quit-all";
+        };
       };
     };
   };
