@@ -14,6 +14,7 @@
     pkgs.element-desktop
     pkgs.inkscape
     pkgs.gimp
+    pkgs.evince
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
