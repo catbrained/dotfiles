@@ -73,6 +73,7 @@
       glp = "git log -p";
       glo = "git log --oneline";
       gd = "git diff";
+      cat = "bat";
       "!!" = {
         position = "anywhere";
         function = "last_history_item";
@@ -101,6 +102,11 @@
       bold_italic_font = "Iosevka Bold Italic";
       font_size = 12;
     };
+  };
+
+  # A cat clone with wings
+  programs.bat = {
+    enable = true;
   };
 
   # Screen locker
