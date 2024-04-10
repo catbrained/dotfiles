@@ -63,6 +63,25 @@
   # The friendly interactive shell
   programs.fish = {
     enable = true;
+    functions = {
+      multicd = "echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)";
+      last_history_item = "echo $history[1]";
+    };
+    shellAbbrs = {
+      gs = "git status";
+      gl = "git log";
+      glp = "git log -p";
+      glo = "git log --oneline";
+      gd = "git diff";
+      "!!" = {
+        position = "anywhere";
+        function = "last_history_item";
+      };
+      dotdot = {
+        regex = "^\\.\\.+$";
+        function = "multicd";
+      };
+    };
   };
 
   # Shell prompt
