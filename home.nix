@@ -103,7 +103,7 @@
       bold_font = "Iosevka Bold";
       italic_font = "Iosevka Italic";
       bold_italic_font = "Iosevka Bold Italic";
-      font_size = 12;
+      font_size = "13.5";
     };
   };
 
