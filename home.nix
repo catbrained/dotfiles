@@ -40,6 +40,7 @@
       gpg.format = "ssh";
       gpg.ssh.allowedSignersFile = "~/.config/git/allowed_signers";
       pull.rebase = true;
+      merge.conflictstyle = "diff3";
       # Diffing
       diff = {
         algorithm = "patience";
