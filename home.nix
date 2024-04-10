@@ -74,6 +74,9 @@
       glo = "git log --oneline";
       gd = "git diff";
       cat = "bat";
+      l = "eza --hyperlink";
+      ll = "eza --hyperlink -l -h --smart-group --git --git-repos";
+      lll = "eza --hyperlink -l -h --smart-group -aa --git --git-repos";
       "!!" = {
         position = "anywhere";
         function = "last_history_item";
@@ -106,6 +109,11 @@
 
   # A cat clone with wings
   programs.bat = {
+    enable = true;
+  };
+
+  # A ls replacement
+  programs.eza = {
     enable = true;
   };
 
