@@ -15,6 +15,7 @@
     pkgs.inkscape
     pkgs.gimp
     pkgs.evince
+    pkgs.libreoffice-fresh
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
