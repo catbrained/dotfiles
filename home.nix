@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "linda";
@@ -74,10 +74,6 @@
       glp = "git log -p";
       glo = "git log --oneline";
       gd = "git diff";
-      cat = "bat";
-      l = "eza --hyperlink";
-      ll = "eza --hyperlink -l -h --smart-group --git --git-repos";
-      lll = "eza --hyperlink -l -h --smart-group -aa --git --git-repos";
       "!!" = {
         position = "anywhere";
         function = "last_history_item";
@@ -86,7 +82,13 @@
         regex = "^\\.\\.+$";
         function = "multicd";
       };
-    };
+    } // (lib.optionalAttrs (config.programs.bat.enable) {
+      cat = "bat";
+    }) // (lib.optionalAttrs (config.programs.eza.enable) {
+      l = "eza --hyperlink";
+      ll = "eza --hyperlink -l -h --smart-group --git --git-repos";
+      lll = "eza --hyperlink -l -h --smart-group -aa --git --git-repos";
+    });
   };
 
   # Shell prompt
@@ -275,15 +277,11 @@
       bindel = [
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ] ++ (lib.optionals (builtins.elem pkgs.brightnessctl config.home.packages) [
         ", XF86MonBrightnessUp, exec, brightnessctl set +2%"
         ", XF86MonBrightnessDown, exec, brightnessctl set 2%-"
-      ];
+      ]);
       bind = [
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioStop, exec, playerctl stop"
-        ", XF86AudioPrev, exec, playerctl previous"
-        ", XF86AudioNext, exec, playerctl next"
-        "$mod, Return, exec, kitty --single-instance"
         "$mod, C, killactive"
         "$mod, M, exit"
         "$mod, H, movefocus, l"
@@ -316,7 +314,14 @@
         "$mod_SHIFT, F, fullscreen, 0" # fullscreen
         "$mod, P, pin, active"
         "$mod_SHIFT, Space, togglefloating, active"
-      ];
+      ] ++ (lib.optionals (config.programs.kitty.enable) [
+        "$mod, Return, exec, kitty --single-instance"
+      ]) ++ (lib.optionals (config.services.playerctld.enable) [
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioStop, exec, playerctl stop"
+        ", XF86AudioPrev, exec, playerctl previous"
+        ", XF86AudioNext, exec, playerctl next"
+      ]);
       windowrulev2 = [
         "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
       ];
