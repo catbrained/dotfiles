@@ -107,6 +107,7 @@
       italic_font = "Iosevka Italic";
       bold_italic_font = "Iosevka Bold Italic";
       font_size = "13.5";
+      enabled_layouts = "tall:bias=65;full_size=1;mirrored=true, fat:bias=65;full_size=1;mirrored=false, grid, splits:split:axis=horizontal, horizontal, vertical, stack";
     };
     keybindings = {
       "ctrl+alt+enter" = "launch --cwd=current";
