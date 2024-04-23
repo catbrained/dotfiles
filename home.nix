@@ -224,6 +224,7 @@
         soft-wrap = {
           enable = true;
         };
+        popup-border = "all";
       };
       keys.normal = {
         "A-<" = "shell_pipe_to";
