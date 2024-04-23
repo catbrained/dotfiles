@@ -16,6 +16,9 @@
     pkgs.gimp
     pkgs.evince
     pkgs.libreoffice-fresh
+    pkgs.slurp # select a region in a wayland compositor
+    pkgs.grim # grab an image in a wayland compositor
+    pkgs.satty # screenshot annotation tool
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
@@ -25,6 +28,20 @@
   home.file.".profile".text = ''
     . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
   '';
+
+  # HM managed scripts
+
+  # screenshots
+  home.file."bin/screenshot.fish" = {
+    enable = true;
+    executable = true;
+    recursive = true;
+    text = ''
+      #!/usr/bin/env fish
+
+      grim -g "$(slurp -d -o -c '#ff0000ff' && sleep 0.4)" - | satty --filename - --fullscreen --copy-command wl-copy --output-filename ~/pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png
+    '';
+  };
 
   programs.git = {
     enable = true;
@@ -299,6 +316,10 @@
         ", XF86MonBrightnessUp, exec, brightnessctl set +2%"
         ", XF86MonBrightnessDown, exec, brightnessctl set 2%-"
       ]);
+      # Trigger when released
+      bindr = [
+        ", Print, exec, fish -c ~/bin/screenshot.fish"
+      ];
       bind = [
         "$mod, C, killactive"
         "$mod, M, exit"
