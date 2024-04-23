@@ -23,6 +23,13 @@
           system = "x86_64-linux";
           modules = [
             {
+              nixpkgs.config.packageOverrides = pkgs: {
+                catppuccin-plymouth = pkgs.catppuccin-plymouth.override {
+                  variant = "mocha";
+                };
+              };
+            }
+            {
               nixpkgs.config.allowUnfreePredicate = pkg:
                 builtins.elem (nixpkgs.lib.getName pkg) allowedUnfree;
             }

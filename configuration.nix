@@ -39,7 +39,7 @@
     # Boot splash screen
     plymouth = {
       enable = true;
-      themePackages = [ (pkgs.catppuccin-plymouth.override { variant = "mocha"; }) ];
+      themePackages = [ pkgs.catppuccin-plymouth ];
       theme = "catppuccin-mocha";
     };
     loader.systemd-boot = {
