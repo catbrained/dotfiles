@@ -346,6 +346,7 @@
         "$mod, 8, workspace, 8"
         "$mod, 9, workspace, 9"
         "$mod, 0, workspace, 10"
+        "$mod, S, togglespecialworkspace,"
         "$mod_SHIFT, H, movewindow, l"
         "$mod_SHIFT, L, movewindow, r"
         "$mod_SHIFT, J, movewindow, d"
@@ -360,6 +361,7 @@
         "$mod_SHIFT, 8, movetoworkspacesilent, 8"
         "$mod_SHIFT, 9, movetoworkspacesilent, 9"
         "$mod_SHIFT, 0, movetoworkspacesilent, 10"
+        "$mod_SHIFT, S, movetoworkspacesilent, special"
         "$mod, F, fullscreen, 1" # maximize window (keep bar and gaps)
         "$mod_SHIFT, F, fullscreen, 0" # fullscreen
         "$mod, P, pin, active"
