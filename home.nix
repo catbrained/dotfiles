@@ -362,6 +362,10 @@
         "$mod_SHIFT, 9, movetoworkspacesilent, 9"
         "$mod_SHIFT, 0, movetoworkspacesilent, 10"
         "$mod_SHIFT, S, movetoworkspacesilent, special"
+        "$mod_CTRL, H, movecurrentworkspacetomonitor, l"
+        "$mod_CTRL, L, movecurrentworkspacetomonitor, r"
+        "$mod_CTRL, J, movecurrentworkspacetomonitor, d"
+        "$mod_CTRL, K, movecurrentworkspacetomonitor, u"
         "$mod, F, fullscreen, 1" # maximize window (keep bar and gaps)
         "$mod_SHIFT, F, fullscreen, 0" # fullscreen
         "$mod, P, pin, active"
