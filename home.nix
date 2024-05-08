@@ -88,9 +88,14 @@
     shellAbbrs = {
       gs = "git status";
       gl = "git log";
+      gl1 = "git log -1";
       glp = "git log -p";
       glo = "git log --oneline";
       gd = "git diff";
+      ga = "git add -p";
+      gc = "git commit -sv";
+      gr = "git rebase";
+      gb = "git switch";
       "!!" = {
         position = "anywhere";
         function = "last_history_item";
