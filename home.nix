@@ -140,7 +140,6 @@
       "ctrl+alt+shift+j" = "move_window down";
       "ctrl+alt+shift+k" = "move_window up";
       "ctrl+alt+shift+l" = "move_window right";
-      "kitty_mod+p" = "nth_window -1";
     };
   };
 
