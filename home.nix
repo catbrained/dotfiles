@@ -188,6 +188,11 @@
       pkgs.nodePackages_latest.typescript-language-server # TS + JS
     ];
     languages = {
+      language-server = {
+        rust-analyzer = {
+          config.check.command = "clippy";
+        };
+      };
       language = [
         {
           name = "nix";
