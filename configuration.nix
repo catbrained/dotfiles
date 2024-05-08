@@ -29,6 +29,10 @@
     };
   };
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", ATTR{idProduct}=="0204", GROUP:="plugdev"
+  '';
+
   boot = {
     # Delete all files in /tmp during boot
     # tmp.cleanOnBoot = true;
@@ -153,14 +157,20 @@
     isNormalUser = true;
     uid = 1000;
     group = "linda";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel" # Enable ‘sudo’ for the user.
+      "plugdev" # Enable access to certain hardware devices, like the microbit
+    ];
     shell = pkgs.fish;
     # fish is enabled via home-manager
     ignoreShellProgramCheck = true;
     packages = [ ];
   };
-  users.groups.linda = {
-    gid = 1000;
+  users.groups = {
+    linda = {
+      gid = 1000;
+    };
+    plugdev = { };
   };
 
   security.loginDefs.settings = {
