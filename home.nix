@@ -92,7 +92,8 @@
       glp = "git log -p";
       glo = "git log --oneline";
       gd = "git diff";
-      ga = "git add -p";
+      ga = "git add";
+      gap = "git add -p";
       gc = "git commit -sv";
       gr = "git rebase";
       gb = "git switch";
