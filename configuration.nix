@@ -135,6 +135,7 @@
     enableDefaultPackages = true;
     packages = [
       pkgs.iosevka
+      pkgs.vegur
     ];
   };
 
