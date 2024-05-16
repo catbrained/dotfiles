@@ -20,6 +20,7 @@
     pkgs.grim # grab an image in a wayland compositor
     pkgs.satty # screenshot annotation tool
     pkgs.openttd
+    pkgs.cataclysm-dda
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
