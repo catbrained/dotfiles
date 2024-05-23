@@ -161,6 +161,12 @@
     enable = true;
   };
 
+  # A `find` replacement
+  programs.fd = {
+    enable = true;
+    hidden = true;
+  };
+
   # Screen locker
   programs.swaylock = {
     enable = true;
