@@ -167,6 +167,11 @@
     hidden = true;
   };
 
+  # A `grep` replacement
+  programs.ripgrep = {
+    enable = true;
+  };
+
   # Screen locker
   programs.swaylock = {
     enable = true;
