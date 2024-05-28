@@ -59,7 +59,7 @@ in
     text = ''
       #!/usr/bin/env fish
 
-      grim -g "$(slurp -d -o -c '#ff0000ff' && sleep 0.4)" - | satty --filename - --fullscreen --copy-command wl-copy --output-filename ~/pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png
+      grim -g "$(slurp -d -o -c '#ff0000ff' && sleep 0.4)" - | satty --filename - --copy-command wl-copy --output-filename ~/pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png
     '';
   };
 
@@ -421,6 +421,7 @@ in
       ]);
       windowrulev2 = [
         "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
+        "float,class:^(com.gabm.satty)$,title:^(satty)$"
       ];
     };
     extraConfig = ''
