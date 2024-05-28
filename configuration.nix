@@ -67,6 +67,7 @@
 
   # Simple networking configuration based on a succinct blog post and, of course, the Arch Wiki.
   # See: https://insanity.industries/post/simple-networking/
+  # See: https://wiki.archlinux.org/title/Systemd-networkd#Wired_and_wireless_adapters_on_the_same_machine
   networking.useNetworkd = true;
   systemd.network = {
     enable = true;
@@ -81,7 +82,34 @@
           Name = "wifi0";
         };
       };
-
+      "00-wired" = {
+        matchConfig = {
+          # This is the interface I want to configure
+          MACAddress = "60:7d:09:6d:c4:40";
+        };
+        linkConfig = {
+          # This is the name I want the interface to have
+          Name = "wired0";
+        };
+      };
+    };
+    networks = {
+      "00-wired" = {
+        matchConfig = {
+          # The name of the interface to match against
+          Name = "wired0";
+        };
+        networkConfig = {
+          DHCP = true;
+          IPv6PrivacyExtensions = true;
+        };
+        dhcpV4Config = {
+          RouteMetric = 100;
+        };
+        ipv6AcceptRAConfig = {
+          RouteMetric = 100;
+        };
+      };
     };
   };
   networking.wireless.iwd = {
