@@ -39,6 +39,7 @@ in
       (mods: with mods.extend customCDDAMods; [
         soundpack.CCsounds
       ]))
+    pkgs.swww # Wallpaper
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
@@ -60,6 +61,31 @@ in
       #!/usr/bin/env fish
 
       grim -g "$(slurp -d -o -c '#ff0000ff' && sleep 0.4)" - | satty --filename - --copy-command wl-copy --output-filename ~/pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png
+    '';
+  };
+
+  # wallpaper
+  home.file."bin/wallpapers.fish" = {
+    enable = true;
+    executable = true;
+    recursive = true;
+    text = ''
+      #!/usr/bin/env fish
+
+      set -gx SWWW_TRANSITION any
+      set -gx SWWW_TRANSITION_STEP 20
+      set -gx SWWW_TRANSITION_DURATION 3
+      set -gx SWWW_TRANSITION_FPS 60
+      set interval 180 # in seconds
+      set wallpaper_path ~/pictures/wallpapers/active
+
+      while true
+        set images (shuf -e $wallpaper_path/*)
+        for img in $images
+          swww img $img
+          sleep $interval
+        end
+      end
     '';
   };
 
@@ -336,6 +362,8 @@ in
       misc = {
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
       };
       binds = {
         workspace_back_and_forth = true;
@@ -422,6 +450,10 @@ in
       windowrulev2 = [
         "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
         "float,class:^(com.gabm.satty)$,title:^(satty)$"
+      ];
+      exec-once = [
+        "swww-daemon"
+        "~/bin/wallpapers.fish"
       ];
     };
     extraConfig = ''
