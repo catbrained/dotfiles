@@ -428,6 +428,12 @@ in
       submap=powermenu
       bind=,l,exec,swaylock --effect-scale 0.5 --effect-blur 7x5 --effect-scale 2
       bind=,l,submap,reset
+      bind=,e,exit
+      bind=,e,submap,reset
+      bind=SHIFT,S,exec,systemctl poweroff --no-wall
+      bind=SHIFT,S,submap,reset
+      bind=SHIFT,R,exec,systemctl reboot --no-wall
+      bind=SHIFT,R,submap,reset
       bind=,escape,submap,reset
       submap=reset
     '';
