@@ -1,5 +1,19 @@
 { config, pkgs, lib, ... }:
-
+let
+  customCDDAMods = self: super: lib.recursiveUpdate super {
+    soundpack.CCsounds = pkgs.cataclysmDDA.buildSoundPack {
+      modName = "CCsounds";
+      version = "2024-01-17";
+      src = pkgs.fetchFromGitHub {
+        owner = "Fris0uman";
+        repo = "CDDA-Soundpacks";
+        rev = "2024-01-17";
+        hash = "sha256-SVMIyGQDkZLs65Cvd3iyJj+p1dxDV8eeuZMrhJl4eVQ=";
+      };
+      modRoot = "sound/CC-Sounds";
+    };
+  };
+in
 {
   home.username = "linda";
   home.homeDirectory = "/home/linda";
@@ -20,7 +34,10 @@
     pkgs.grim # grab an image in a wayland compositor
     pkgs.satty # screenshot annotation tool
     pkgs.openttd
-    pkgs.cataclysm-dda
+    (pkgs.cataclysm-dda.withMods
+      (mods: with mods.extend customCDDAMods; [
+        soundpack.CCsounds
+      ]))
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
