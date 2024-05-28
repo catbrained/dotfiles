@@ -18,6 +18,7 @@ in
   home.username = "linda";
   home.homeDirectory = "/home/linda";
   home.packages = [
+    pkgs.ripunzip
     pkgs.libnotify
     pkgs.jq # json utility
     pkgs.socat # socket communication utility
