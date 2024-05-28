@@ -357,6 +357,7 @@ in
       bindl = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        "$mod, M, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
       ];
       # Keybinds that work while the screen is locked, and that allow press and hold
       bindel = [
@@ -372,7 +373,6 @@ in
       ];
       bind = [
         "$mod, C, killactive"
-        "$mod, M, exit"
         "$mod, H, movefocus, l"
         "$mod, L, movefocus, r"
         "$mod, J, movefocus, d"
