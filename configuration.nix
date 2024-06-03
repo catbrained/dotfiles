@@ -29,9 +29,20 @@
     };
   };
 
-  services.udev.extraRules = ''
-    SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", ATTR{idProduct}=="0204", GROUP:="plugdev"
-  '';
+  # services.udev.extraRules doesn't work with udev rules that use uaccess
+  # See: https://github.com/NixOS/nixpkgs/issues/308681
+  services.udev.packages = [
+    (pkgs.writeTextFile
+      {
+        name = "microbit-udev-rules";
+        # See: https://wiki.archlinux.org/title/Udev#Allowing_regular_users_to_use_devices
+        text = ''
+          SUBSYSTEMS=="usb", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="0660", TAG+="uaccess"
+        '';
+        destination = "/etc/udev/rules.d/70-microbit.rules";
+      }
+    )
+  ];
 
   boot = {
     # Delete all files in /tmp during boot
@@ -188,7 +199,6 @@
     group = "linda";
     extraGroups = [
       "wheel" # Enable ‘sudo’ for the user.
-      "plugdev" # Enable access to certain hardware devices, like the microbit
     ];
     shell = pkgs.fish;
     # fish is enabled via home-manager
@@ -199,7 +209,6 @@
     linda = {
       gid = 1000;
     };
-    plugdev = { };
   };
 
   security.loginDefs.settings = {
