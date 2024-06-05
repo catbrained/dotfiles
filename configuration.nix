@@ -252,6 +252,10 @@
     enable = true;
   };
 
+  programs.steam = {
+    enable = true;
+  };
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.

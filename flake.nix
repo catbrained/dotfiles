@@ -14,6 +14,9 @@
     let
       # List of packages with unfree licenses that are allowed
       allowedUnfree = [
+        "steam"
+        "steam-original"
+        "steam-run"
         "discord"
       ];
     in
