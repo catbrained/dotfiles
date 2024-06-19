@@ -71,6 +71,8 @@
     };
   };
 
+  virtualisation.podman.enable = true;
+
   networking.hostName = "quasar"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -233,6 +235,7 @@
     pkgs.git
     pkgs.nil # LSP for Nix
     pkgs.nixpkgs-fmt # Formatter for Nix
+    pkgs.podman-compose
   ];
 
   # Set default editor to helix
