@@ -311,8 +311,6 @@ in
         popup-border = "all";
       };
       keys.normal = {
-        tab = "move_parent_node_end";
-        S-tab = "move_parent_node_start";
         "A-<" = "shell_pipe_to";
         "+" = {
           g = {
@@ -324,13 +322,6 @@ in
           u = ":update";
           q = ":quit-all";
         };
-      };
-      keys.insert = {
-        S-tab = "move_parent_node_start";
-      };
-      keys.select = {
-        tab = "extend_parent_node_end";
-        S-tab = "extend_parent_node_start";
       };
     };
   };
