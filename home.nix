@@ -40,6 +40,12 @@ in
         soundpack.CCsounds
       ]))
     pkgs.swww # Wallpaper
+    pkgs.ardour # DAW
+    pkgs.vital # wavetable synth
+    pkgs.geonkick # drums
+    pkgs.helvum # pipewire patchbay
+    pkgs.lsp-plugins # lots of nice audio plugins
+    pkgs.guitarix # Guitar plugins
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
@@ -441,6 +447,10 @@ in
       windowrulev2 = [
         "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
         "float,class:^(com.gabm.satty)$,title:^(satty)$"
+        # This is necessary because for some reason certain
+        # drag-and-drop operations are broken in Ardour on Hyprland.
+        # (For example, dragging a plugin up or down in the effects/plugin stack)
+        "nofocus,class:^(Ardour-)(.*)$,title:^(Ardour)$"
       ];
       exec-once = [
         "swww-daemon"

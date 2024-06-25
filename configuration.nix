@@ -189,6 +189,8 @@
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    jack.enable = true;
+    alsa.enable = true;
   };
   # The PulseAudio server uses this to acquire realtime priority
   security.rtkit.enable = true;

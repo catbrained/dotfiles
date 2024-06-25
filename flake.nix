@@ -14,6 +14,7 @@
     let
       # List of packages with unfree licenses that are allowed
       allowedUnfree = [
+        "vital"
         "steam"
         "steam-original"
         "steam-run"
