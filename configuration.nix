@@ -182,6 +182,11 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  # Enable SANE to enable scanning
+  hardware.sane = {
+    enable = true;
+  };
+  services.ipp-usb.enable = true;
 
   services.udisks2.enable = true;
 

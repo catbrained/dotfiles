@@ -31,6 +31,7 @@ in
     pkgs.gimp
     pkgs.evince
     pkgs.calibre
+    pkgs.img2pdf
     pkgs.libreoffice-fresh
     pkgs.slurp # select a region in a wayland compositor
     pkgs.grim # grab an image in a wayland compositor
