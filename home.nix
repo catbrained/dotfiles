@@ -58,6 +58,14 @@ in
     . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
   '';
 
+  xdg.mimeApps = {
+    enable = true;
+
+    defaultApplications = {
+      "text/html" = [ "firefox.desktop" ];
+    };
+  };
+
   # HM managed scripts
 
   # screenshots
