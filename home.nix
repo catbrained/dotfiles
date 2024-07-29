@@ -94,12 +94,15 @@ in
       set -gx SWWW_TRANSITION_FPS 60
       set interval 180 # in seconds
       set wallpaper_path ~/pictures/wallpapers/active
+      set -U wallpaper_change_paused 0
 
       while true
         set images (shuf -e $wallpaper_path/*)
         for img in $images
-          swww img $img
-          sleep $interval
+          if test $wallpaper_change_paused = 0
+            swww img $img
+          end
+            sleep $interval
         end
       end
     '';
@@ -146,6 +149,13 @@ in
     functions = {
       multicd = "echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)";
       last_history_item = "echo $history[1]";
+      toggle_wallpaper_change = ''
+        if test $wallpaper_change_paused = 0
+          set -U wallpaper_change_paused 1
+        else
+          set -U wallpaper_change_paused 0
+        end
+      '';
     };
     shellAbbrs = {
       gs = "git status";
