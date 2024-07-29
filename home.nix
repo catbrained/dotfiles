@@ -156,6 +156,16 @@ in
           set -U wallpaper_change_paused 0
         end
       '';
+      notify = ''
+        set -l job (jobs -l -g)
+        or begin; echo "There are no jobs" >&2; return 1; end
+
+        function _notify_job_$job --on-job-exit $job --inherit-variable job
+          echo -n \a # beep
+          notify-send --transient "Job finished"
+          functions -e _notify_job_$job
+        end
+      '';
     };
     shellAbbrs = {
       gs = "git status";
