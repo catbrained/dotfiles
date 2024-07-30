@@ -146,7 +146,19 @@ in
   # The friendly interactive shell
   programs.fish = {
     enable = true;
+    interactiveShellInit = ''
+      set -g fish_key_bindings fish_hybrid_key_bindings
+    '';
     functions = {
+      fish_hybrid_key_bindings = {
+        description = "Vi-style bindings that inherit emacs-style bindings in all modes";
+        body = ''
+          for mode in default insert visual
+            fish_default_key_bindings -M $mode
+          end
+          fish_vi_key_bindings --no-erase
+        '';
+      };
       multicd = "echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)";
       last_history_item = "echo $history[1]";
       toggle_wallpaper_change = ''
