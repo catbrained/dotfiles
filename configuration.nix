@@ -25,7 +25,7 @@
       automatic = true;
       dates = "weekly";
       randomizedDelaySec = "30min";
-      options = "--delete-older-than 1w";
+      options = "--delete-older-than 7d";
     };
   };
 
