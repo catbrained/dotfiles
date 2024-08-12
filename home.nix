@@ -293,12 +293,13 @@ in
     defaultOptions = [
       "--height 40%"
       "--border"
+      "--layout=reverse"
     ];
     # The command that gets executed as the source for the CTRL-T keybinding
     fileWidgetCommand = "fd --type f";
     # The options for CTRL-T
     fileWidgetOptions = [
-      "--preview 'head {}'"
+      "--preview 'bat --line-range :20 --color always {}'"
     ];
     # Command line options for the CTRL-R keybind
     historyWidgetOptions = [
