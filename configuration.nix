@@ -181,7 +181,12 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [
+      pkgs.brlaser
+    ];
+  };
   # Enable SANE to enable scanning
   hardware.sane = {
     enable = true;
