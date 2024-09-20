@@ -195,6 +195,10 @@
 
   services.udisks2.enable = true;
 
+  hardware.bluetooth = {
+    enable = true;
+  };
+
   # Enable sound.
   services.pipewire = {
     enable = true;
