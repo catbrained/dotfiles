@@ -29,6 +29,7 @@ in
     pkgs.element-desktop
     pkgs.inkscape
     pkgs.gimp
+    pkgs.krita
     pkgs.evince
     pkgs.calibre
     pkgs.img2pdf
