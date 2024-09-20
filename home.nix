@@ -237,7 +237,7 @@ in
   # Terminal emulator
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Mocha";
     settings = {
       font_family = "Iosevka";
       bold_font = "Iosevka Bold";
