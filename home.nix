@@ -49,6 +49,7 @@ in
     pkgs.helvum # pipewire patchbay
     pkgs.lsp-plugins # lots of nice audio plugins
     pkgs.guitarix # Guitar plugins
+    pkgs.intiface-central
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
