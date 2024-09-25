@@ -4,13 +4,18 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, lix-module, home-manager, ... }@inputs:
     let
       # List of packages with unfree licenses that are allowed
       allowedUnfree = [
@@ -26,6 +31,7 @@
         "quasar" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            lix-module.nixosModules.default
             {
               nixpkgs.config.packageOverrides = pkgs: {
                 catppuccin-plymouth = pkgs.catppuccin-plymouth.override {
