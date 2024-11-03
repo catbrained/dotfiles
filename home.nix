@@ -30,6 +30,7 @@ in
     pkgs.inkscape
     pkgs.gimp
     pkgs.krita
+    pkgs.godot_4
     pkgs.evince
     pkgs.calibre
     pkgs.img2pdf
