@@ -3,12 +3,12 @@ let
   customCDDAMods = self: super: lib.recursiveUpdate super {
     soundpack.CCsounds = pkgs.cataclysmDDA.buildSoundPack {
       modName = "CCsounds";
-      version = "2024-01-17";
+      version = "2024-10-27";
       src = pkgs.fetchFromGitHub {
         owner = "Fris0uman";
         repo = "CDDA-Soundpacks";
-        rev = "2024-01-17";
-        hash = "sha256-SVMIyGQDkZLs65Cvd3iyJj+p1dxDV8eeuZMrhJl4eVQ=";
+        rev = "2024-10-27";
+        hash = "sha256-CWv2xD06+Z3uTwf4IcZSHLXP1Fm0ozvSRKih70VOcPw=";
       };
       modRoot = "sound/CC-Sounds";
     };
