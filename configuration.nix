@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -27,6 +27,12 @@
       randomizedDelaySec = "30min";
       options = "--delete-older-than 7d";
     };
+  };
+
+  # AMD microcode updates
+  services.ucodenix = {
+    enable = true;
+    cpuModelId = "00A50F00";
   };
 
   # services.udev.extraRules doesn't work with udev rules that use uaccess

@@ -13,9 +13,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Tool for updating microcode on AMD consumer CPUs
+    ucodenix.url = "github:e-tho/ucodenix/56c73f68361ae713be920bd221592c381f82fa23";
   };
 
-  outputs = { self, nixpkgs, lix-module, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, lix-module, home-manager, ucodenix, ... }@inputs:
     let
       # List of packages with unfree licenses that are allowed
       allowedUnfree = [
@@ -44,6 +47,7 @@
               nixpkgs.config.allowUnfreePredicate = pkg:
                 builtins.elem (nixpkgs.lib.getName pkg) allowedUnfree;
             }
+            ucodenix.nixosModules.default
             ./configuration.nix
             home-manager.nixosModules.home-manager
             {
