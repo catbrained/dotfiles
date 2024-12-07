@@ -54,6 +54,7 @@ in
     pkgs.lsp-plugins # lots of nice audio plugins
     pkgs.guitarix # Guitar plugins
     pkgs.intiface-central
+    pkgs.kdePackages.xwaylandvideobridge
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
