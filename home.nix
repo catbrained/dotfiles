@@ -25,7 +25,9 @@ in
     pkgs.wl-clipboard
     pkgs.brightnessctl
     pkgs.playerctl
-    pkgs.discord
+    (pkgs.discord.override {
+      withVencord = true;
+    })
     pkgs.element-desktop
     pkgs.inkscape
     pkgs.gimp
