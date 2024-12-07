@@ -587,6 +587,10 @@ in
     '';
   };
 
+  programs.obs-studio = {
+    enable = true;
+  };
+
   # Notification daemon
   services.dunst = {
     enable = true;
