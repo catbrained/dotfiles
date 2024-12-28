@@ -55,6 +55,7 @@ in
     pkgs.guitarix # Guitar plugins
     pkgs.intiface-central
     pkgs.kdePackages.xwaylandvideobridge
+    pkgs.minetest
     (pkgs.callPackage ./pkgs/ksp.nix { })
     pkgs.ckan
   ];
