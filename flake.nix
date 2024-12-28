@@ -22,6 +22,8 @@
     let
       # List of packages with unfree licenses that are allowed
       allowedUnfree = [
+        "corefonts"
+        "vista-fonts"
         "vital"
         "steam"
         "steam-original"

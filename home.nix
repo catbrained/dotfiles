@@ -55,6 +55,8 @@ in
     pkgs.guitarix # Guitar plugins
     pkgs.intiface-central
     pkgs.kdePackages.xwaylandvideobridge
+    (pkgs.callPackage ./pkgs/ksp.nix { })
+    pkgs.ckan
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
