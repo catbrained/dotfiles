@@ -453,8 +453,18 @@
             "file-encoding"
           ];
         };
+        # Minimum severity to show a diagnostic after the end of a line.
+        end-of-line-diagnostics = "hint";
+        inline-diagnostics = {
+          # Minimum severity to show a diagnostic on the primary cursor's line.
+          # These are hidden in insert mode.
+          cursor-line = "warn";
+          # Minimum severity to show a diagnostic on other lines.
+          other-lines = "error";
+        };
         lsp = {
           display-messages = true;
+          display-progress-messages = true;
           display-inlay-hints = true;
         };
         indent-guides = {
