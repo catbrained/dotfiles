@@ -1,19 +1,19 @@
 { config, pkgs, lib, ... }:
-let
-  customCDDAMods = self: super: lib.recursiveUpdate super {
-    soundpack.CCsounds = pkgs.cataclysmDDA.buildSoundPack {
-      modName = "CCsounds";
-      version = "2024-10-27";
-      src = pkgs.fetchFromGitHub {
-        owner = "Fris0uman";
-        repo = "CDDA-Soundpacks";
-        rev = "2024-10-27";
-        hash = "sha256-CWv2xD06+Z3uTwf4IcZSHLXP1Fm0ozvSRKih70VOcPw=";
-      };
-      modRoot = "sound/CC-Sounds";
-    };
-  };
-in
+# let
+#   customCDDAMods = self: super: lib.recursiveUpdate super {
+#     soundpack.CCsounds = pkgs.cataclysmDDA.buildSoundPack {
+#       modName = "CCsounds";
+#       version = "2024-10-27";
+#       src = pkgs.fetchFromGitHub {
+#         owner = "Fris0uman";
+#         repo = "CDDA-Soundpacks";
+#         rev = "2024-10-27";
+#         hash = "sha256-CWv2xD06+Z3uTwf4IcZSHLXP1Fm0ozvSRKih70VOcPw=";
+#       };
+#       modRoot = "sound/CC-Sounds";
+#     };
+#   };
+# in
 {
   home.username = "linda";
   home.homeDirectory = "/home/linda";
@@ -42,10 +42,10 @@ in
     pkgs.satty # screenshot annotation tool
     pkgs.xivlauncher
     pkgs.openttd
-    (pkgs.cataclysm-dda.withMods
-      (mods: with mods.extend customCDDAMods; [
-        soundpack.CCsounds
-      ]))
+    # (pkgs.cataclysm-dda.withMods
+    #   (mods: with mods.extend customCDDAMods; [
+    #     soundpack.CCsounds
+    #   ]))
     pkgs.swww # Wallpaper
     pkgs.ardour # DAW
     pkgs.vital # wavetable synth
