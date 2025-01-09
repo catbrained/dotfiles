@@ -225,6 +225,7 @@
     group = "linda";
     extraGroups = [
       "wheel" # Enable ‘sudo’ for the user.
+      "wireshark" # Let me capture packets
     ];
     shell = pkgs.fish;
     # fish is enabled via home-manager
@@ -274,6 +275,11 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
+  };
 
   programs.hyprland = {
     enable = true;
