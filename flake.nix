@@ -40,6 +40,9 @@
             lix-module.nixosModules.default
             {
               nixpkgs.config.packageOverrides = pkgs: {
+                catppuccin-sddm = pkgs.catppuccin-sddm.override {
+                  flavor = "mocha";
+                };
                 catppuccin-plymouth = pkgs.catppuccin-plymouth.override {
                   variant = "mocha";
                 };

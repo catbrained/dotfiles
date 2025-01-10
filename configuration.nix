@@ -259,6 +259,7 @@
     pkgs.nil # LSP for Nix
     pkgs.nixpkgs-fmt # Formatter for Nix
     pkgs.podman-compose
+    pkgs.catppuccin-sddm
   ];
 
   # Set default editor to helix
@@ -297,11 +298,13 @@
   services.xserver.enable = true;
   services.displayManager.sddm = {
     enable = true;
+    package = pkgs.kdePackages.sddm;
     wayland = {
       enable = true;
       compositor = "kwin";
     };
     autoNumlock = true;
+    theme = "catppuccin-mocha";
   };
 
   # Open ports in the firewall.
