@@ -458,7 +458,7 @@
         inline-diagnostics = {
           # Minimum severity to show a diagnostic on the primary cursor's line.
           # These are hidden in insert mode.
-          cursor-line = "warn";
+          cursor-line = "warning";
           # Minimum severity to show a diagnostic on other lines.
           other-lines = "error";
         };
