@@ -73,8 +73,10 @@
       };
 
       templates = {
-        path = ./templates/rust-minimal;
-        description = "A minimal Rust template that can be dropped into existing repos or empty directories.";
+        rustMinimal = {
+          path = ./templates/rust-minimal;
+          description = "A minimal Rust template that can be dropped into existing repos or empty directories.";
+        };
       };
     };
 }
