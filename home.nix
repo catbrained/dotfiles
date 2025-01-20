@@ -59,6 +59,7 @@
     (pkgs.callPackage ./pkgs/ksp.nix { })
     (pkgs.callPackage ./pkgs/new-project.nix { })
     pkgs.ckan
+    pkgs.jellyfin-media-player
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
