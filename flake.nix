@@ -77,6 +77,10 @@
           path = ./templates/rust-minimal;
           description = "A minimal Rust template that can be dropped into existing repos or empty directories.";
         };
+        typescript = {
+          path = ./templates/typescript;
+          description = "A simple Typescript template.";
+        };
       };
     };
 }
