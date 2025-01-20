@@ -57,6 +57,7 @@
     pkgs.kdePackages.xwaylandvideobridge
     pkgs.minetest
     (pkgs.callPackage ./pkgs/ksp.nix { })
+    (pkgs.callPackage ./pkgs/new-project.nix { })
     pkgs.ckan
   ];
 
