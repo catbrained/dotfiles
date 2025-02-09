@@ -191,6 +191,7 @@
     enable = true;
     drivers = [
       pkgs.brlaser
+      pkgs.hplip
     ];
   };
   # Enable SANE to enable scanning
