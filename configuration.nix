@@ -322,6 +322,7 @@
     autoNumlock = true;
     theme = "catppuccin-mocha";
   };
+  services.displayManager.defaultSession = "hyprland";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
