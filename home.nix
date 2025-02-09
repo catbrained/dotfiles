@@ -179,6 +179,8 @@
     enable = true;
     interactiveShellInit = ''
       set -g fish_key_bindings fish_hybrid_key_bindings
+      set -gx MANPAGER 'fish -c "col -bx | bat -l man -p"'
+      set -gx MANROFFOPT '-c'
     '';
     functions = {
       fish_hybrid_key_bindings = {
