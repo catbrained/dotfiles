@@ -248,6 +248,18 @@
   # The home-manager package will not be able to unlock the session without this.
   security.pam.services.swaylock = { };
 
+  documentation = {
+    man = {
+      generateCaches = false; # slow as heck, so keep this off for now
+    };
+    dev = {
+      enable = true;
+    };
+    nixos = {
+      includeAllModules = true;
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
@@ -261,6 +273,9 @@
     pkgs.nixpkgs-fmt # Formatter for Nix
     pkgs.podman-compose
     pkgs.catppuccin-sddm
+    pkgs.man-pages
+    pkgs.man-pages-posix
+    pkgs.linux-manual
   ];
 
   # Set default editor to helix
