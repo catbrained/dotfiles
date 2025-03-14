@@ -276,6 +276,7 @@
     pkgs.man-pages
     pkgs.man-pages-posix
     pkgs.linux-manual
+    pkgs.hplip
   ];
 
   # Set default editor to helix
