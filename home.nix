@@ -29,6 +29,7 @@
     (pkgs.discord.override {
       withVencord = true;
     })
+    pkgs.revolt-desktop
     pkgs.element-desktop
     pkgs.inkscape
     pkgs.gimp
