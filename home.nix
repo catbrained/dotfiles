@@ -19,7 +19,8 @@
   home.homeDirectory = "/home/linda";
   home.packages = [
     pkgs.tlrc # tldr client
-    pkgs.ripunzip
+    pkgs.zip
+    pkgs.unzip
     pkgs.libnotify
     pkgs.jq # json utility
     pkgs.socat # socket communication utility
