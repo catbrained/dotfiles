@@ -50,6 +50,7 @@
     #     soundpack.CCsounds
     #   ]))
     pkgs.swww # Wallpaper
+    pkgs.audacity
     pkgs.ardour # DAW
     pkgs.vital # wavetable synth
     pkgs.geonkick # drums
