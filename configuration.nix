@@ -183,6 +183,9 @@
     packages = [
       pkgs.iosevka
       pkgs.vegur
+      pkgs.noto-fonts-cjk-sans
+      pkgs.noto-fonts-cjk-serif
+      pkgs.ipaexfont
     ];
   };
 
