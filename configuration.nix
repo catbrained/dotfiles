@@ -136,13 +136,15 @@
     enable = true;
     settings = {
       General = {
-        # Allows us to set the interface name ourselves.
-        # See the above section `systemd.network.links` for setting the name.
-        UseDefaultInterface = true;
         # Enable builtin DHCP client
         EnableNetworkConfiguration = true;
         # Randomize MAC address every time iwd starts or the hardware is initially detected.
         AddressRandomization = "once";
+      };
+      DriverQuirks = {
+        # Allows us to set the interface name ourselves.
+        # See the above section `systemd.network.links` for setting the name.
+        UseDefaultInterface = true;
       };
     };
   };
