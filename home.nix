@@ -27,9 +27,7 @@
     pkgs.wl-clipboard
     pkgs.brightnessctl
     pkgs.playerctl
-    (pkgs.discord.override {
-      withVencord = true;
-    })
+    pkgs.vesktop
     pkgs.revolt-desktop
     pkgs.element-desktop
     pkgs.inkscape
