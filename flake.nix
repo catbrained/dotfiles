@@ -4,11 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3-1.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +13,7 @@
     ucodenix.url = "github:e-tho/ucodenix/56c73f68361ae713be920bd221592c381f82fa23";
   };
 
-  outputs = { self, nixpkgs, lix-module, home-manager, ucodenix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ucodenix, ... }@inputs:
     let
       # List of packages with unfree licenses that are allowed
       allowedUnfree = [
@@ -37,7 +32,6 @@
         "quasar" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            lix-module.nixosModules.default
             {
               nixpkgs.config.packageOverrides = pkgs: {
                 catppuccin-sddm = pkgs.catppuccin-sddm.override {

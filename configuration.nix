@@ -12,6 +12,7 @@
     ];
 
   nix = {
+    package = pkgs.lixPackageSets.latest.lix;
     settings = {
       # Enable flakes and the new nix commands
       experimental-features = [ "nix-command" "flakes" ];
