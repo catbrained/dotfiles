@@ -67,6 +67,7 @@
     pkgs.wineWowPackages.waylandFull
     pkgs.lutris
     pkgs.winetricks
+    pkgs.ausweisapp
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
