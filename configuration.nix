@@ -355,7 +355,7 @@
       compositor = "kwin";
     };
     autoNumlock = true;
-    theme = "catppuccin-mocha";
+    theme = "${pkgs.catppuccin-sddm}/share/sddm/themes/catppuccin-mocha-mauve";
   };
   services.displayManager.defaultSession = "hyprland";
 
