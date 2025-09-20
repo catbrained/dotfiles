@@ -556,7 +556,7 @@
         workspace_back_and_forth = true;
       };
       gestures = {
-        workspace_swipe = true;
+        gesture = "3, horizontal, workspace";
       };
       "$mod" = "SUPER";
       # Mouse binds
