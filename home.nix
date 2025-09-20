@@ -62,7 +62,7 @@
     (pkgs.callPackage ./pkgs/ksp.nix { })
     (pkgs.callPackage ./pkgs/new-project.nix { })
     pkgs.ckan
-    pkgs.jellyfin-media-player
+    # pkgs.jellyfin-media-player
     pkgs.protontricks
     pkgs.wineWowPackages.waylandFull
     pkgs.lutris
