@@ -30,6 +30,7 @@
     pkgs.vesktop
     pkgs.revolt-desktop
     pkgs.element-desktop
+    pkgs.teamspeak6-client
     pkgs.inkscape
     pkgs.gimp
     pkgs.krita

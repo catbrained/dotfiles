@@ -24,6 +24,7 @@
         "steam-original"
         "steam-run"
         "steam-unwrapped"
+        "teamspeak6-client"
         "discord"
       ];
     in
