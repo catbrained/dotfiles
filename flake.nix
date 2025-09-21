@@ -35,6 +35,15 @@
           modules = [
             {
               nixpkgs.config.packageOverrides = pkgs: {
+                google-fonts = pkgs.google-fonts.overrideAttrs (finalAttrs: previousAttrs: {
+                  # "Sour Gummy" isn't in the version that's in nixpkgs yet.
+                  src = pkgs.fetchFromGitHub {
+                    owner = "google";
+                    repo = "fonts";
+                    rev = "5fa1b4a6c5feaaab0c0e09a568f3d332bcab355b";
+                    hash = "sha256-SDlokzULEzbZI/vEap9AukTlgJRDhzg1Qw3XjpwDSek=";
+                  };
+                });
                 catppuccin-sddm = pkgs.catppuccin-sddm.override {
                   flavor = "mocha";
                 };
