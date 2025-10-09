@@ -37,7 +37,7 @@
     pkgs.godot_4
     pkgs.evince
     pkgs.calibre
-    pkgs.img2pdf
+    # pkgs.img2pdf
     pkgs.libreoffice-fresh
     pkgs.slurp # select a region in a wayland compositor
     pkgs.grim # grab an image in a wayland compositor
