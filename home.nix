@@ -57,7 +57,6 @@
     pkgs.lsp-plugins # lots of nice audio plugins
     pkgs.guitarix # Guitar plugins
     pkgs.intiface-central
-    pkgs.kdePackages.xwaylandvideobridge
     pkgs.minetest
     (pkgs.callPackage ./pkgs/ksp.nix { })
     (pkgs.callPackage ./pkgs/new-project.nix { })
