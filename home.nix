@@ -148,12 +148,10 @@
 
   programs.git = {
     enable = true;
-    userEmail = "linda@catbrained.dev";
-    userName = "Linda Siemons";
-    extraConfig = {
-      # XXX: The HM module does not yet support defaultBranch
+    settings = {
+      user.email = "linda@catbrained.dev";
+      user.name = "Linda Siemons";
       init.defaultBranch = "main";
-      # XXX: The HM module does not yet support ssh signing
       commit.gpgSign = true;
       tag.gpgSign = true;
       user.signingKey = "~/.ssh/id_ed25519";
