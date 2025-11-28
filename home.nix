@@ -34,6 +34,7 @@
     pkgs.inkscape
     pkgs.gimp
     pkgs.krita
+    pkgs.darktable
     pkgs.godot_4
     pkgs.evince
     pkgs.calibre
