@@ -632,13 +632,13 @@
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioNext, exec, playerctl next"
       ]);
-      windowrulev2 = [
-        "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
-        "float,class:^(com.gabm.satty)$,title:^(satty)$"
+      windowrule = [
+        "match:float true,match:class ^(firefox)$,match:title ^(Picture-in-Picture)$"
+        "match:float true,match:class ^(com.gabm.satty)$,match:title ^(satty)$"
         # This is necessary because for some reason certain
         # drag-and-drop operations are broken in Ardour on Hyprland.
         # (For example, dragging a plugin up or down in the effects/plugin stack)
-        "nofocus,class:^(Ardour-)(.*)$,title:^(Ardour)$"
+        "match:focus false,match:class ^(Ardour-)(.*)$,match:title ^(Ardour)$"
       ];
       exec-once = [
         "swww-daemon"
