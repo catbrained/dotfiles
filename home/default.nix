@@ -23,6 +23,7 @@
     ./git.nix
     ./direnv.nix
     ./bash.nix
+    ./starship.nix
   ];
 
   home.username = "linda";
@@ -154,12 +155,6 @@
         end
       end
     '';
-  };
-
-  # Shell prompt
-  programs.starship = {
-    enable = true;
-    settings = { };
   };
 
   # A ls replacement
