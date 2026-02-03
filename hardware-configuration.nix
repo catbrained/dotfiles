@@ -28,6 +28,13 @@
       options = [ "noatime" "nodiscard" "compress=zstd" "subvol=home" ];
     };
 
+  fileSystems."/home/linda/games" =
+    {
+      device = "/dev/disk/by-uuid/ea548103-6ff2-4c8b-a895-37e7d524f0a1";
+      fsType = "btrfs";
+      options = [ "noatime" "nodiscard" "compress=zstd" "subvol=games" ];
+    };
+
   boot.initrd.luks.devices."cryptnixos".device = "/dev/disk/by-uuid/a2f7aaac-2bf7-4ad7-84b2-8409fc11af30";
 
   fileSystems."/boot" =
