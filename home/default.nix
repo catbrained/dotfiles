@@ -31,6 +31,7 @@
     ./swaylock.nix
     ./hyprland.nix
     ./obs-studio.nix
+    ./dunst.nix
   ];
 
   home.username = "linda";
@@ -162,11 +163,6 @@
         end
       end
     '';
-  };
-
-  # Notification daemon
-  services.dunst = {
-    enable = true;
   };
 
   services.playerctld = {
