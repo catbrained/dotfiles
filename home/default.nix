@@ -33,6 +33,7 @@
     ./obs-studio.nix
     ./dunst.nix
     ./playerctl.nix
+    ./firefox.nix
   ];
 
   home.username = "linda";
@@ -163,10 +164,6 @@
         end
       end
     '';
-  };
-
-  programs.firefox = {
-    enable = true;
   };
 
   # image viewer
