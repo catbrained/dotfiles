@@ -30,6 +30,7 @@
     ./fzf.nix
     ./swaylock.nix
     ./hyprland.nix
+    ./obs-studio.nix
   ];
 
   home.username = "linda";
@@ -161,13 +162,6 @@
         end
       end
     '';
-  };
-
-  programs.obs-studio = {
-    enable = true;
-    plugins = [
-      pkgs.obs-studio-plugins.obs-vaapi
-    ];
   };
 
   # Notification daemon
