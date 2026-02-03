@@ -32,6 +32,7 @@
     ./hyprland.nix
     ./obs-studio.nix
     ./dunst.nix
+    ./playerctl.nix
   ];
 
   home.username = "linda";
@@ -45,7 +46,6 @@
     pkgs.socat # socket communication utility
     pkgs.wl-clipboard
     pkgs.brightnessctl
-    pkgs.playerctl
     pkgs.vesktop
     pkgs.revolt-desktop
     pkgs.element-desktop
@@ -163,10 +163,6 @@
         end
       end
     '';
-  };
-
-  services.playerctld = {
-    enable = true;
   };
 
   programs.firefox = {
