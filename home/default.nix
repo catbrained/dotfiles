@@ -35,6 +35,7 @@
     ./playerctl.nix
     ./firefox.nix
     ./imv.nix
+    ./mpv.nix
   ];
 
   home.username = "linda";
@@ -165,10 +166,6 @@
         end
       end
     '';
-  };
-
-  programs.mpv = {
-    enable = true;
   };
 
   programs.ssh = {
