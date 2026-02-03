@@ -22,6 +22,7 @@
     ./kitty.nix
     ./git.nix
     ./direnv.nix
+    ./bash.nix
   ];
 
   home.username = "linda";
@@ -153,10 +154,6 @@
         end
       end
     '';
-  };
-
-  programs.bash = {
-    enable = true;
   };
 
   # Shell prompt
