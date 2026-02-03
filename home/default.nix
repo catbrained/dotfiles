@@ -25,6 +25,7 @@
     ./bash.nix
     ./starship.nix
     ./eza.nix
+    ./fd.nix
   ];
 
   home.username = "linda";
@@ -156,12 +157,6 @@
         end
       end
     '';
-  };
-
-  # A `find` replacement
-  programs.fd = {
-    enable = true;
-    hidden = true;
   };
 
   # A `grep` replacement
