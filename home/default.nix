@@ -36,6 +36,7 @@
     ./firefox.nix
     ./imv.nix
     ./mpv.nix
+    ./ssh.nix
   ];
 
   home.username = "linda";
@@ -167,28 +168,6 @@
       end
     '';
   };
-
-  programs.ssh = {
-    enable = true;
-    enableDefaultConfig = false;
-    matchBlocks."*" = {
-      forwardAgent = false;
-      addKeysToAgent = "confirm 20m";
-      compression = false;
-      serverAliveInterval = 0;
-      serverAliveCountMax = 3;
-      hashKnownHosts = false;
-      userKnownHostsFile = "~/.ssh/known_hosts";
-      controlMaster = "no";
-      controlPath = "~/.ssh/master-%r@%n:%p";
-      controlPersist = "no";
-    };
-    extraConfig = ''
-      PasswordAuthentication no
-    '';
-  };
-
-  services.ssh-agent.enable = true;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
