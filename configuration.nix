@@ -268,7 +268,7 @@
 
   # PAM must be configured to enable swaylock to perform authentication.
   # The home-manager package will not be able to unlock the session without this.
-  security.pam.services.swaylock = { };
+  # security.pam.services.swaylock = { };
 
   documentation = {
     man = {
@@ -294,7 +294,7 @@
     pkgs.nil # LSP for Nix
     pkgs.nixpkgs-fmt # Formatter for Nix
     pkgs.podman-compose
-    pkgs.catppuccin-sddm
+    # pkgs.catppuccin-sddm
     pkgs.man-pages
     pkgs.man-pages-posix
     pkgs.linux-manual
@@ -321,9 +321,9 @@
     package = pkgs.wireshark;
   };
 
-  programs.hyprland = {
-    enable = true;
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  # };
 
   programs.steam = {
     enable = true;
@@ -339,18 +339,32 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  services.xserver.enable = true;
-  services.displayManager.sddm = {
+  services.displayManager.cosmic-greeter = {
     enable = true;
-    package = pkgs.kdePackages.sddm;
-    wayland = {
-      enable = true;
-      compositor = "kwin";
-    };
-    autoNumlock = true;
-    theme = "${pkgs.catppuccin-sddm}/share/sddm/themes/catppuccin-mocha-mauve";
   };
-  services.displayManager.defaultSession = "hyprland";
+
+  services.desktopManager.cosmic = {
+    enable = true;
+  };
+
+  environment.cosmic.excludePackages = [
+    # exclude packages here
+  ];
+  # COSMIC enables this by default, but I want to disable this
+  networking.networkmanager.enable = false;
+
+  services.xserver.enable = true;
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   package = pkgs.kdePackages.sddm;
+  #   wayland = {
+  #     enable = true;
+  #     compositor = "kwin";
+  #   };
+  #   autoNumlock = true;
+  #   theme = "${pkgs.catppuccin-sddm}/share/sddm/themes/catppuccin-mocha-mauve";
+  # };
+  # services.displayManager.defaultSession = "hyprland";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
