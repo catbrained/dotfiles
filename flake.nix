@@ -61,7 +61,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.linda = import ./home.nix;
+              home-manager.users.linda = import ./home;
             }
           ];
         };
