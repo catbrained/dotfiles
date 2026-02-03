@@ -24,6 +24,7 @@
     ./direnv.nix
     ./bash.nix
     ./starship.nix
+    ./eza.nix
   ];
 
   home.username = "linda";
@@ -155,11 +156,6 @@
         end
       end
     '';
-  };
-
-  # A ls replacement
-  programs.eza = {
-    enable = true;
   };
 
   # A `find` replacement
