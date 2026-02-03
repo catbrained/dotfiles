@@ -34,6 +34,7 @@
     ./dunst.nix
     ./playerctl.nix
     ./firefox.nix
+    ./imv.nix
   ];
 
   home.username = "linda";
@@ -164,11 +165,6 @@
         end
       end
     '';
-  };
-
-  # image viewer
-  programs.imv = {
-    enable = true;
   };
 
   programs.mpv = {
