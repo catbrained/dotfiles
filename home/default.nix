@@ -21,6 +21,7 @@
     ./fish.nix
     ./kitty.nix
     ./git.nix
+    ./direnv.nix
   ];
 
   home.username = "linda";
@@ -152,11 +153,6 @@
         end
       end
     '';
-  };
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
   };
 
   programs.bash = {
