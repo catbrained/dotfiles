@@ -43,7 +43,6 @@
     pkgs.slurp # select a region in a wayland compositor
     pkgs.grim # grab an image in a wayland compositor
     pkgs.satty # screenshot annotation tool
-    pkgs.xivlauncher
     pkgs.openttd
     # (pkgs.cataclysm-dda.withMods
     #   (mods: with mods.extend customCDDAMods; [
