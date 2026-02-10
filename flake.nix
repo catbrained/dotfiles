@@ -10,7 +10,7 @@
     };
 
     # Tool for updating microcode on AMD consumer CPUs
-    ucodenix.url = "github:e-tho/ucodenix/56c73f68361ae713be920bd221592c381f82fa23";
+    ucodenix.url = "github:e-tho/ucodenix/e6bba9fbe258049db05e62809ce78adc875e4977";
   };
 
   outputs = { self, nixpkgs, home-manager, ucodenix, ... }@inputs:
