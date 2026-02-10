@@ -337,7 +337,34 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh = {
+    # Enabling this explicitly will generate host keys, even if the SSH daemon isn't enabled.
+    generateHostKeys = true;
+    # enable = true;
+    # startWhenNeeded = true;
+    # X11Forwarding = false;
+    # PermitRootLogin = "no";
+    # PasswordAuthentication = false;
+    # KbdInteractiveAuthentication = false;
+    # openFirewall = true;
+  };
+
+  sops = {
+    defaultSopsFile = ./secrets/example.yaml;
+    age = {
+      sshKeyPaths = [
+        "/etc/ssh/ssh_host_ed25519_key"
+      ];
+    };
+    secrets = {
+      example_key = {
+        mode = "0440";
+        owner = config.users.users.linda.name;
+        group = config.users.users.linda.group;
+      };
+      "myservice/my_subdir/my_secret" = { };
+    };
+  };
 
   services.displayManager.cosmic-greeter = {
     enable = true;

@@ -11,9 +11,15 @@
 
     # Tool for updating microcode on AMD consumer CPUs
     ucodenix.url = "github:e-tho/ucodenix/e6bba9fbe258049db05e62809ce78adc875e4977";
+
+    # Secrets management
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ucodenix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ucodenix, sops-nix, ... }@inputs:
     let
       # List of packages with unfree licenses that are allowed
       allowedUnfree = [
@@ -62,6 +68,7 @@
             }
             ucodenix.nixosModules.default
             ./configuration.nix
+            sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

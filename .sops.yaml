@@ -1,0 +1,11 @@
+keys:
+  - users:
+    - &linda age1fckqsu2xjqueae260j4ct9tz3ugseude8emg5fmguq5u8xcwqfuq7667mp
+  - hosts:
+    - &quasar age1auvgla9lxvskyjyrvmhneqedqs9wwecd4c575uau4vu3kg8ld9ss3m5llq
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+      - age:
+          - *linda
+          - *quasar

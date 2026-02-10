@@ -91,6 +91,9 @@
     pkgs.lutris
     pkgs.winetricks
     pkgs.ausweisapp
+    pkgs.age
+    pkgs.ssh-to-age
+    pkgs.sops
   ];
 
   # For some reason Home Manager fails to load env vars correctly.
