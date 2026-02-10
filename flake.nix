@@ -25,6 +25,7 @@
         "steam-run"
         "steam-unwrapped"
         "teamspeak6-client"
+        "factorio-space-age"
       ];
     in
     {
@@ -48,6 +49,10 @@
                 # };
                 catppuccin-plymouth = pkgs.catppuccin-plymouth.override {
                   variant = "mocha";
+                };
+                factorio-space-age = pkgs.factorio-space-age.override {
+                  username = "catbrained";
+                  token = nixpkgs.lib.readFile ./secrets/factorio_token.txt;
                 };
               };
             }

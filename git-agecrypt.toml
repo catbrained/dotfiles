@@ -1,0 +1,2 @@
+[config]
+"secrets/factorio_token.txt" = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIAsoKQZS3EtdVd/wdw+m30ZAe5shaz1R+HENhwaVcHs linda@catbrained.dev"]
