@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./borgmatic.nix
     ];
 
   nix = {
@@ -350,19 +351,14 @@
   };
 
   sops = {
-    defaultSopsFile = ./secrets/example.yaml;
+    defaultSopsFile = ./secrets/secrets.yaml;
     age = {
       sshKeyPaths = [
         "/etc/ssh/ssh_host_ed25519_key"
       ];
     };
     secrets = {
-      example_key = {
-        mode = "0440";
-        owner = config.users.users.linda.name;
-        group = config.users.users.linda.group;
-      };
-      "myservice/my_subdir/my_secret" = { };
+      "borgmatic/quasar/encryption_password" = { };
     };
   };
 
