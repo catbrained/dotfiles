@@ -89,48 +89,6 @@
     };
   };
 
-  # HM managed scripts
-
-  # screenshots
-  home.file."bin/screenshot.fish" = {
-    enable = true;
-    executable = true;
-    recursive = true;
-    text = ''
-      #!/usr/bin/env fish
-
-      grim -g "$(slurp -d -o -c '#ff0000ff' && sleep 0.4)" - | satty --filename - --copy-command wl-copy --output-filename ~/pictures/screenshots/screenshot-$(date '+%Y%m%d-%H:%M:%S').png
-    '';
-  };
-
-  # wallpaper
-  home.file."bin/wallpapers.fish" = {
-    enable = true;
-    executable = true;
-    recursive = true;
-    text = ''
-      #!/usr/bin/env fish
-
-      set -gx SWWW_TRANSITION any
-      set -gx SWWW_TRANSITION_STEP 20
-      set -gx SWWW_TRANSITION_DURATION 3
-      set -gx SWWW_TRANSITION_FPS 60
-      set interval 180 # in seconds
-      set wallpaper_path ~/pictures/wallpapers/active
-      set -U wallpaper_change_paused 0
-
-      while true
-        set images (shuf -e $wallpaper_path/*)
-        for img in $images
-          if test $wallpaper_change_paused = 0
-            swww img $img
-          end
-            sleep $interval
-        end
-      end
-    '';
-  };
-
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
