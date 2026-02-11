@@ -19,7 +19,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ucodenix, sops-nix, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ucodenix, sops-nix, ... }:
     let
       # List of packages with unfree licenses that are allowed
       allowedUnfree = [
