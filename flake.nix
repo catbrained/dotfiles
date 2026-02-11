@@ -73,14 +73,6 @@
             }
           ];
         };
-
-        # Build it with `nix run nixpkgs#nixos-generators -- --format iso --flake .#customIso -o result`
-        customIso = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/customIso/configuration.nix
-          ];
-        };
       };
     };
 }
