@@ -19,57 +19,10 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ucodenix, sops-nix, ... }:
-    let
-      # List of packages with unfree licenses that are allowed
-      allowedUnfree = [
-        "vital"
-        "steam"
-        "steam-unwrapped"
-        "teamspeak6-client"
-        "factorio-space-age"
-      ];
-    in
+  outputs = { nixpkgs, home-manager, sops-nix, ucodenix, ... }:
     {
       nixosConfigurations = {
-        "quasar" = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            {
-              nixpkgs.config.packageOverrides = pkgs: {
-                google-fonts = pkgs.google-fonts.overrideAttrs (finalAttrs: previousAttrs: {
-                  # "Sour Gummy" isn't in the version that's in nixpkgs yet.
-                  src = pkgs.fetchFromGitHub {
-                    owner = "google";
-                    repo = "fonts";
-                    rev = "5fa1b4a6c5feaaab0c0e09a568f3d332bcab355b";
-                    hash = "sha256-SDlokzULEzbZI/vEap9AukTlgJRDhzg1Qw3XjpwDSek=";
-                  };
-                });
-                catppuccin-plymouth = pkgs.catppuccin-plymouth.override {
-                  variant = "mocha";
-                };
-                factorio-space-age = pkgs.factorio-space-age.override {
-                  username = "catbrained";
-                  token = nixpkgs.lib.readFile ./secrets/factorio_token.txt;
-                };
-              };
-            }
-            {
-              nixpkgs.config.allowUnfreePredicate = pkg:
-                builtins.elem (nixpkgs.lib.getName pkg) allowedUnfree;
-            }
-            ucodenix.nixosModules.default
-            ./configuration.nix
-            sops-nix.nixosModules.sops
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.linda = import ./home;
-            }
-          ];
-        };
+        quasar = import ./hosts/quasar { inherit nixpkgs home-manager sops-nix ucodenix; };
       };
     };
 }
