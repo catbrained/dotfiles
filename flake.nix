@@ -23,12 +23,8 @@
     let
       # List of packages with unfree licenses that are allowed
       allowedUnfree = [
-        "corefonts"
-        "vista-fonts"
         "vital"
         "steam"
-        "steam-original"
-        "steam-run"
         "steam-unwrapped"
         "teamspeak6-client"
         "factorio-space-age"
