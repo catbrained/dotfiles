@@ -82,7 +82,6 @@
     pkgs.guitarix # Guitar plugins
     pkgs.intiface-central
     pkgs.luanti
-    (pkgs.callPackage ../pkgs/new-project.nix { })
     pkgs.ckan
     pkgs.jellyfin-media-player
     pkgs.protontricks
