@@ -14,6 +14,10 @@
         "/home/linda/documents"
         "/home/linda/pictures"
         "/home/linda/videos"
+        "/home/linda/.factorio/saves"
+        "/home/linda/.factorio/achievements*.dat"
+        "/home/linda/.factorio/blueprint-storage*.dat"
+        "/home/linda/.factorio/config.cfg"
       ];
       keep_hourly = 24;
       keep_daily = 7;
