@@ -53,8 +53,6 @@
   ];
 
   boot = {
-    # Delete all files in /tmp during boot
-    # tmp.cleanOnBoot = true;
     # Mount a tmpfs on /tmp
     # Warning: Large Nix builds may fail if the tmpfs is too small!
     tmp.useTmpfs = true;
@@ -93,9 +91,6 @@
   virtualisation.podman.enable = true;
 
   networking.hostName = "quasar"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Simple networking configuration based on a succinct blog post and, of course, the Arch Wiki.
   # See: https://insanity.industries/post/simple-networking/
@@ -166,10 +161,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -213,7 +204,6 @@
   services.printing = {
     enable = true;
     drivers = [
-      # pkgs.brlaser
       pkgs.hplip
     ];
   };
@@ -238,9 +228,6 @@
   };
   # The PulseAudio server uses this to acquire realtime priority
   security.rtkit.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.linda = {
@@ -267,10 +254,6 @@
     DEFAULT_HOME = "no";
   };
 
-  # PAM must be configured to enable swaylock to perform authentication.
-  # The home-manager package will not be able to unlock the session without this.
-  # security.pam.services.swaylock = { };
-
   documentation = {
     man = {
       generateCaches = false; # slow as heck, so keep this off for now
@@ -295,7 +278,6 @@
     pkgs.nil # LSP for Nix
     pkgs.nixpkgs-fmt # Formatter for Nix
     pkgs.podman-compose
-    # pkgs.catppuccin-sddm
     pkgs.man-pages
     pkgs.man-pages-posix
     pkgs.linux-manual
@@ -309,22 +291,10 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
   programs.wireshark = {
     enable = true;
     package = pkgs.wireshark;
   };
-
-  # programs.hyprland = {
-  #   enable = true;
-  # };
 
   programs.steam = {
     enable = true;
@@ -341,13 +311,6 @@
   services.openssh = {
     # Enabling this explicitly will generate host keys, even if the SSH daemon isn't enabled.
     generateHostKeys = true;
-    # enable = true;
-    # startWhenNeeded = true;
-    # X11Forwarding = false;
-    # PermitRootLogin = "no";
-    # PasswordAuthentication = false;
-    # KbdInteractiveAuthentication = false;
-    # openFirewall = true;
   };
 
   sops = {
@@ -377,28 +340,6 @@
   networking.networkmanager.enable = false;
 
   services.xserver.enable = true;
-  # services.displayManager.sddm = {
-  #   enable = true;
-  #   package = pkgs.kdePackages.sddm;
-  #   wayland = {
-  #     enable = true;
-  #     compositor = "kwin";
-  #   };
-  #   autoNumlock = true;
-  #   theme = "${pkgs.catppuccin-sddm}/share/sddm/themes/catppuccin-mocha-mauve";
-  # };
-  # services.displayManager.defaultSession = "hyprland";
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

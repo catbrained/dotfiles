@@ -46,9 +46,6 @@
                     hash = "sha256-SDlokzULEzbZI/vEap9AukTlgJRDhzg1Qw3XjpwDSek=";
                   };
                 });
-                # catppuccin-sddm = pkgs.catppuccin-sddm.override {
-                #   flavor = "mocha";
-                # };
                 catppuccin-plymouth = pkgs.catppuccin-plymouth.override {
                   variant = "mocha";
                 };

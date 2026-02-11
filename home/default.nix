@@ -1,19 +1,4 @@
 { config, pkgs, lib, ... }:
-# let
-#   customCDDAMods = self: super: lib.recursiveUpdate super {
-#     soundpack.CCsounds = pkgs.cataclysmDDA.buildSoundPack {
-#       modName = "CCsounds";
-#       version = "2024-10-27";
-#       src = pkgs.fetchFromGitHub {
-#         owner = "Fris0uman";
-#         repo = "CDDA-Soundpacks";
-#         rev = "2024-10-27";
-#         hash = "sha256-CWv2xD06+Z3uTwf4IcZSHLXP1Fm0ozvSRKih70VOcPw=";
-#       };
-#       modRoot = "sound/CC-Sounds";
-#     };
-#   };
-# in
 {
   imports = [
     ./helix.nix
@@ -29,7 +14,6 @@
     ./ripgrep.nix
     ./fzf.nix
     ./swaylock.nix
-    # ./hyprland.nix
     ./obs-studio.nix
     ./dunst.nix
     ./playerctl.nix
@@ -61,17 +45,12 @@
     pkgs.godot_4
     pkgs.evince
     pkgs.calibre
-    # pkgs.img2pdf
     pkgs.libreoffice-fresh
     pkgs.factorio-space-age
     pkgs.slurp # select a region in a wayland compositor
     pkgs.grim # grab an image in a wayland compositor
     pkgs.satty # screenshot annotation tool
     pkgs.openttd
-    # (pkgs.cataclysm-dda.withMods
-    #   (mods: with mods.extend customCDDAMods; [
-    #     soundpack.CCsounds
-    #   ]))
     pkgs.swww # Wallpaper
     pkgs.audacity
     pkgs.ardour # DAW
@@ -101,25 +80,6 @@
   home.file.".profile".text = ''
     . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
   '';
-
-  # home.pointerCursor = {
-  #   gtk.enable = true;
-  #   package = pkgs.bibata-cursors;
-  #   name = "Bibata-Modern-Classic";
-  #   size = 16;
-  # };
-
-  # gtk = {
-  #   enable = true;
-  #   theme = {
-  #     package = pkgs.flat-remix-gtk;
-  #     name = "Flat-Remix-GTK-Grey-Darkest";
-  #   };
-  #   iconTheme = {
-  #     package = pkgs.adwaita-icon-theme;
-  #     name = "Adwaita";
-  #   };
-  # };
 
   xdg.mimeApps = {
     enable = true;
