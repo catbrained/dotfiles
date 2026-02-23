@@ -23,6 +23,7 @@
     {
       nixosConfigurations = {
         quasar = import ./hosts/quasar { inherit nixpkgs home-manager sops-nix ucodenix; };
+        pulsar = import ./hosts/pulsar { inherit nixpkgs; };
       };
     };
 }
