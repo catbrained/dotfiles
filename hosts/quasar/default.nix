@@ -1,4 +1,4 @@
-{ nixpkgs, home-manager, sops-nix, ucodenix }:
+{ nixpkgs, home-manager, sops-nix, ucodenix, aagl }:
 let
   # List of packages with unfree licenses that are allowed
   allowedUnfree = [
@@ -35,6 +35,10 @@ nixpkgs.lib.nixosSystem {
     {
       nixpkgs.config.allowUnfreePredicate = pkg:
         builtins.elem (nixpkgs.lib.getName pkg) allowedUnfree;
+    }
+    {
+      imports = [ aagl.nixosModules.default ];
+      programs.honkers-railway-launcher.enable = true;
     }
     ucodenix.nixosModules.default
     ./configuration.nix

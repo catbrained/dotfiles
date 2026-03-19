@@ -17,12 +17,17 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    aagl = {
+      url = "github:ezKEa/aagl-gtk-on-nix/dcb53a4cb4cb09ef7f08328428ba559be5b9f01b";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, sops-nix, ucodenix, ... }:
+  outputs = { nixpkgs, home-manager, sops-nix, ucodenix, aagl, ... }:
     {
       nixosConfigurations = {
-        quasar = import ./hosts/quasar { inherit nixpkgs home-manager sops-nix ucodenix; };
+        quasar = import ./hosts/quasar { inherit nixpkgs home-manager sops-nix ucodenix aagl; };
         pulsar = import ./hosts/pulsar { inherit nixpkgs; };
       };
     };
