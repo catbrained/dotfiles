@@ -66,6 +66,7 @@
     pkgs.protontricks
     pkgs.wineWowPackages.waylandFull
     pkgs.lutris
+    pkgs.protonplus
     pkgs.winetricks
     pkgs.ausweisapp
     pkgs.age
