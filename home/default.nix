@@ -56,7 +56,6 @@
     pkgs.ardour # DAW
     pkgs.vital # wavetable synth
     pkgs.geonkick # drums
-    pkgs.helvum # pipewire patchbay
     pkgs.lsp-plugins # lots of nice audio plugins
     pkgs.guitarix # Guitar plugins
     pkgs.intiface-central
