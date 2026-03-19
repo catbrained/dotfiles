@@ -63,7 +63,7 @@
     pkgs.ckan
     pkgs.jellyfin-media-player
     pkgs.protontricks
-    pkgs.wineWowPackages.waylandFull
+    pkgs.wineWow64Packages.waylandFull
     pkgs.lutris
     pkgs.protonplus
     pkgs.winetricks

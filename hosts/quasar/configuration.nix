@@ -257,7 +257,7 @@
 
   documentation = {
     man = {
-      generateCaches = false; # slow as heck, so keep this off for now
+      cache.enable = false; # slow as heck, so keep this off for now
     };
     dev = {
       enable = true;
