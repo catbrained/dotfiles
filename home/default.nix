@@ -4,6 +4,7 @@
     ./helix.nix
     ./bat.nix
     ./fish.nix
+    ./fcitx5.nix
     ./kitty.nix
     ./git.nix
     ./direnv.nix
