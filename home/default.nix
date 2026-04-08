@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./audio.nix
     ./anki.nix
     ./helix.nix
     ./bat.nix
@@ -54,12 +55,6 @@
     pkgs.satty # screenshot annotation tool
     pkgs.openttd
     pkgs.swww # Wallpaper
-    pkgs.audacity
-    pkgs.ardour # DAW
-    pkgs.vital # wavetable synth
-    pkgs.geonkick # drums
-    pkgs.lsp-plugins # lots of nice audio plugins
-    pkgs.guitarix # Guitar plugins
     pkgs.intiface-central
     pkgs.luanti
     pkgs.ckan
