@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./anki.nix
     ./helix.nix
     ./bat.nix
     ./fish.nix
