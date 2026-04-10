@@ -2,14 +2,15 @@
 {
   programs.git = {
     enable = true;
+    signing = {
+      format = "ssh";
+      signByDefault = true;
+      key = "~/.ssh/id_ed25519";
+    };
     settings = {
       user.email = "linda@catbrained.dev";
       user.name = "Linda Siemons";
       init.defaultBranch = "main";
-      commit.gpgSign = true;
-      tag.gpgSign = true;
-      user.signingKey = "~/.ssh/id_ed25519";
-      gpg.format = "ssh";
       gpg.ssh.allowedSignersFile = "~/.config/git/allowed_signers";
       pull.rebase = true;
       merge.conflictstyle = "diff3";
