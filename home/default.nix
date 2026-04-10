@@ -50,11 +50,7 @@
     pkgs.calibre
     pkgs.libreoffice-fresh
     pkgs.factorio-space-age
-    pkgs.slurp # select a region in a wayland compositor
-    pkgs.grim # grab an image in a wayland compositor
-    pkgs.satty # screenshot annotation tool
     pkgs.openttd
-    pkgs.swww # Wallpaper
     pkgs.intiface-central
     pkgs.luanti
     pkgs.ckan
