@@ -7,10 +7,8 @@
     extraPackages = [
       pkgs.nil # LSP for Nix
       pkgs.nixpkgs-fmt # Formatter for Nix
-      pkgs.nodePackages_latest.bash-language-server
       pkgs.vscode-langservers-extracted # Provides json, html, (s)css LSPs
       pkgs.marksman # Markdown LSP
-      pkgs.nodePackages_latest.typescript-language-server # TS + JS
     ];
     languages = {
       language-server = {
