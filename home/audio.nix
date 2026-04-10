@@ -7,6 +7,7 @@
     pkgs.geonkick # drums
     pkgs.lsp-plugins # lots of nice audio plugins
     pkgs.guitarix # Guitar plugins
+    pkgs.carla # Plugin host & patchbay
   ];
 
   home.sessionVariables =
