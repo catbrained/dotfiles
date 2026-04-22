@@ -51,6 +51,16 @@
         destination = "/etc/udev/rules.d/70-microbit.rules";
       }
     )
+    (pkgs.writeTextFile
+      {
+        name = "pixel10-udev-rules";
+        # See: https://wiki.archlinux.org/title/Udev#Allowing_regular_users_to_use_devices
+        text = ''
+          SUBSYSTEMS=="usb", ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="4ee1", MODE="0660", TAG+="uaccess"
+        '';
+        destination = "/etc/udev/rules.d/70-pixel10.rules";
+      }
+    )
   ];
 
   boot = {
