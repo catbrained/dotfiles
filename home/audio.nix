@@ -10,7 +10,7 @@
     pkgs.carla # Plugin host & patchbay
   ];
 
-  home.sessionVariables =
+  systemd.user.sessionVariables =
     let
       makePluginPath = format:
         (lib.makeSearchPath format [
