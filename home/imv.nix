@@ -1,7 +1,9 @@
-{ ... }:
+{ lib, config, ... }:
 {
-  # image viewer
-  programs.imv = {
-    enable = true;
+  config = lib.mkIf config.localhost.enable {
+    # image viewer
+    programs.imv = {
+      enable = true;
+    };
   };
 }

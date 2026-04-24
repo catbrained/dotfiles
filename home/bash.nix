@@ -1,6 +1,8 @@
 { ... }:
 {
-  programs.bash = {
-    enable = true;
+  config = {
+    programs.bash = {
+      enable = true;
+    };
   };
 }

@@ -1,10 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 {
-  home.packages = [
-    pkgs.playerctl
-  ];
+  config = lib.mkIf config.localhost.enable {
+    home.packages = [
+      pkgs.playerctl
+    ];
 
-  services.playerctld = {
-    enable = true;
+    services.playerctld = {
+      enable = true;
+    };
   };
 }

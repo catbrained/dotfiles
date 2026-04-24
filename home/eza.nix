@@ -1,7 +1,9 @@
 { ... }:
 {
-  # A ls replacement
-  programs.eza = {
-    enable = true;
+  config = {
+    # A ls replacement
+    programs.eza = {
+      enable = true;
+    };
   };
 }

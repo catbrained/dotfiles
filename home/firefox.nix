@@ -1,6 +1,8 @@
-{ ... }:
+{ lib, config, ... }:
 {
-  programs.firefox = {
-    enable = true;
+  config = lib.mkIf config.localhost.enable {
+    programs.firefox = {
+      enable = true;
+    };
   };
 }

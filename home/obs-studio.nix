@@ -1,9 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 {
-  programs.obs-studio = {
-    enable = true;
-    plugins = [
-      pkgs.obs-studio-plugins.obs-vaapi
-    ];
+  config = lib.mkIf config.localhost.enable {
+    programs.obs-studio = {
+      enable = true;
+      plugins = [
+        pkgs.obs-studio-plugins.obs-vaapi
+      ];
+    };
   };
 }

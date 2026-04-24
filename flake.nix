@@ -22,13 +22,18 @@
       url = "github:ezKEa/aagl-gtk-on-nix/dcb53a4cb4cb09ef7f08328428ba559be5b9f01b";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, sops-nix, ucodenix, aagl, ... }:
+  outputs = { nixpkgs, home-manager, sops-nix, ucodenix, aagl, disko, ... }:
     {
       nixosConfigurations = {
         quasar = import ./hosts/quasar { inherit nixpkgs home-manager sops-nix ucodenix aagl; };
-        pulsar = import ./hosts/pulsar { inherit nixpkgs; };
+        pulsar = import ./hosts/pulsar { inherit nixpkgs home-manager disko; };
       };
     };
 }

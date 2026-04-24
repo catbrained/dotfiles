@@ -1,6 +1,8 @@
-{ ... }:
+{ lib, config, ... }:
 {
-  programs.mpv = {
-    enable = true;
+  config = lib.mkIf config.localhost.enable {
+    programs.mpv = {
+      enable = true;
+    };
   };
 }

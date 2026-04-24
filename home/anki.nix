@@ -1,6 +1,8 @@
-{ ... }:
+{ config, lib, ... }:
 {
-  programs.anki = {
-    enable = true;
+  config = lib.mkIf config.localhost.enable {
+    programs.anki = {
+      enable = true;
+    };
   };
 }

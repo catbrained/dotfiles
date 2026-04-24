@@ -1,8 +1,10 @@
-{ ... }:
+{ lib, config, ... }:
 {
-  # Shell prompt
-  programs.starship = {
-    enable = true;
-    settings = { };
+  config = lib.mkIf config.localhost.enable {
+    # Shell prompt
+    programs.starship = {
+      enable = true;
+      settings = { };
+    };
   };
 }

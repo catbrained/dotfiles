@@ -1,7 +1,9 @@
-{ ... }:
+{ lib, config, ... }:
 {
-  # Notification daemon
-  services.dunst = {
-    enable = false;
+  config = lib.mkIf config.localhost.enable {
+    # Notification daemon
+    services.dunst = {
+      enable = false;
+    };
   };
 }

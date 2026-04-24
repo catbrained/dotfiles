@@ -1,8 +1,10 @@
 { ... }:
 {
-  # A `find` replacement
-  programs.fd = {
-    enable = true;
-    hidden = true;
+  config = {
+    # A `find` replacement
+    programs.fd = {
+      enable = true;
+      hidden = true;
+    };
   };
 }

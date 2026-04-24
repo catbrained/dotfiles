@@ -47,7 +47,7 @@ nixpkgs.lib.nixosSystem {
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.users.linda = import ../../home;
+      home-manager.users.linda = import ../../home/quasar.nix;
     }
   ];
 }

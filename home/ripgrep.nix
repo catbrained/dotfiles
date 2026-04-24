@@ -1,10 +1,12 @@
 { ... }:
 {
-  # A `grep` replacement
-  programs.ripgrep = {
-    enable = true;
-    arguments = [
-      "--smart-case"
-    ];
+  config = {
+    # A `grep` replacement
+    programs.ripgrep = {
+      enable = true;
+      arguments = [
+        "--smart-case"
+      ];
+    };
   };
 }
