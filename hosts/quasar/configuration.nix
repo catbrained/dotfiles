@@ -86,6 +86,9 @@
     initrd.systemd = {
       enable = true;
     };
+    binfmt.emulatedSystems = [
+      "aarch64-linux"
+    ];
     extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback
     ];
