@@ -69,6 +69,7 @@
     };
     services.resolved.enable = true;
 
+    users.mutableUsers = false;
     users.users.linda = {
       isNormalUser = true;
       uid = 1000;
@@ -76,6 +77,7 @@
       extraGroups = [
         "wheel"
       ];
+      hashedPassword = "$y$j9T$0lbzPlCzrriScQwT0YVK6.$q6mHKS0M/z82hVt/pJQOQeb1gK6DV97xp5gUsHcwi.D";
       shell = pkgs.fish;
       ignoreShellProgramCheck = true;
     };
