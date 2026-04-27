@@ -16,6 +16,10 @@
         controlPath = "~/.ssh/master-%r@%n:%p";
         controlPersist = "no";
       };
+      matchBlocks."pulsar" = {
+        hostname = "89.58.12.21";
+        port = 52783;
+      };
       extraConfig = ''
         PasswordAuthentication no
       '';
