@@ -3,6 +3,9 @@
   imports = [
     ./disk-config.nix
     ./ssh.nix
+    ./nginx.nix
+    ./acme.nix
+    ./website.nix
   ];
 
   config = {
