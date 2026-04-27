@@ -65,7 +65,7 @@
         pkgs.jellyfin-media-player
         pkgs.protontricks
         pkgs.wineWow64Packages.waylandFull
-        pkgs.lutris
+        # pkgs.lutris
         pkgs.protonplus
         pkgs.winetricks
         pkgs.ausweisapp
