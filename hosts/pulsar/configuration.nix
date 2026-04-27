@@ -60,8 +60,15 @@
             # The name of the interface to match against
             Name = "wired0";
           };
+          address = [
+            "2a03:4000:60:b9c::/64"
+            "89.58.12.21/22"
+          ];
+          gateway = [
+            "fe80::1"
+            "89.58.12.1"
+          ];
           networkConfig = {
-            DHCP = true;
             IPv6PrivacyExtensions = true;
           };
         };
