@@ -121,6 +121,7 @@
         keys.normal = {
           "A-<" = "shell_pipe_to";
           "+" = {
+            w = ":toggle whitespace.render all none";
             g = {
               s = ":run-shell-command git status";
               l = ":run-shell-command git log --oneline";
