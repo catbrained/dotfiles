@@ -86,6 +86,8 @@
         . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
       '';
 
+      xdg.enable = true;
+
       xdg.mimeApps = {
         enable = true;
 
