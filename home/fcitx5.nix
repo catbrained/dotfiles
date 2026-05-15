@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 {
-  config = lib.mkIf config.localhost.enable {
+  config = lib.mkIf config.localhost-extra.enable {
     i18n.inputMethod = {
       enable = true;
       type = "fcitx5";

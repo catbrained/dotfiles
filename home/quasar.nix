@@ -6,5 +6,6 @@
 
   config = {
     localhost.enable = true;
+    localhost-extra.enable = true;
   };
 }

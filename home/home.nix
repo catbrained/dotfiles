@@ -28,6 +28,7 @@
 
   options = {
     localhost.enable = lib.mkEnableOption "Is this a machine that I use locally (e.g., laptop)?";
+    localhost-extra.enable = lib.mkEnableOption "Is this a local machine that wants more than a minimal setup?";
   };
 
   config =
@@ -45,6 +46,8 @@
         pkgs.socat # socket communication utility
         pkgs.wl-clipboard
         pkgs.brightnessctl
+      ];
+      packages.localhost-extra = [
         pkgs.vesktop
         pkgs.revolt-desktop
         pkgs.element-desktop
@@ -76,7 +79,8 @@
       home.username = "linda";
       home.homeDirectory = "/home/linda";
       home.packages = packages.common
-        ++ lib.optionals config.localhost.enable packages.localhost;
+        ++ lib.optionals config.localhost.enable packages.localhost
+        ++ lib.optionals config.localhost-extra.enable packages.localhost-extra;
 
       # For some reason Home Manager fails to load env vars correctly.
       # This means things like $SSH_AUTH_SOCK won't be available.

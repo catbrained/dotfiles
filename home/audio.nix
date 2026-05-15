@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 {
-  config = lib.mkIf config.localhost.enable {
+  config = lib.mkIf config.localhost-extra.enable {
     home.packages = [
       pkgs.audacity
       pkgs.ardour # DAW

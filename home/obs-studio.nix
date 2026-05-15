@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 {
-  config = lib.mkIf config.localhost.enable {
+  config = lib.mkIf config.localhost-extra.enable {
     programs.obs-studio = {
       enable = true;
       plugins = [
