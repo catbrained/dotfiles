@@ -108,6 +108,7 @@
       pkgs.helix # Editor
       pkgs.nil # LSP for Nix
       pkgs.nixpkgs-fmt # Formatter for Nix
+      pkgs.openvpn
     ];
     # Set default editor to helix
     environment.variables.EDITOR = "hx";
