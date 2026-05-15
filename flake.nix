@@ -34,6 +34,7 @@
       nixosConfigurations = {
         quasar = import ./hosts/quasar { inherit nixpkgs home-manager sops-nix ucodenix aagl; };
         pulsar = import ./hosts/pulsar { inherit nixpkgs home-manager disko; };
+        htb-vm = import ./hosts/htb-vm { inherit nixpkgs home-manager; };
       };
     };
 }
