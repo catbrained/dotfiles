@@ -138,5 +138,21 @@
         options = "caps:escape,shift:both_capslock";
       };
     };
+
+    services.displayManager.cosmic-greeter = {
+      enable = true;
+    };
+
+    services.desktopManager.cosmic = {
+      enable = true;
+    };
+
+    environment.cosmic.excludePackages = [
+      # exclude packages here
+    ];
+    # COSMIC enables this by default, but I want to disable this
+    networking.networkmanager.enable = false;
+
+    services.xserver.enable = true;
   };
 }
