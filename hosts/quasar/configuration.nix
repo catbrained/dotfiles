@@ -104,6 +104,14 @@
     security.polkit.enable = true;
 
     virtualisation.podman.enable = true;
+    virtualisation.libvirtd = {
+      enable = true;
+      onBoot = "ignore";
+      qemu = {
+        runAsRoot = false;
+      };
+    };
+    programs.virt-manager.enable = true;
 
     networking.hostName = "quasar"; # Define your hostname.
 
@@ -252,6 +260,7 @@
       extraGroups = [
         "wheel" # Enable ‘sudo’ for the user.
         "wireshark" # Let me capture packets
+        "libvirtd" # Manage VMs via virt-manager
       ];
       shell = pkgs.fish;
       # fish is enabled via home-manager
