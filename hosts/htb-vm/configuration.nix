@@ -80,6 +80,7 @@
       # };
     };
     services.resolved.enable = true;
+    environment.etc.hosts.mode = "0644";
 
     users.mutableUsers = false;
     users.users.linda = {
