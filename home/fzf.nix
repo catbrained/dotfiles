@@ -5,9 +5,9 @@
     programs.fzf = {
       enable = true;
       # The command that gets executed as the source for the ALT-C keybinding
-      changeDirWidgetCommand = "fd --type d";
+      changeDirWidget.command = "fd --type d";
       # Command line options for the ALT-C keybinding
-      changeDirWidgetOptions = [
+      changeDirWidget.options = [
         "--preview 'eza --color=always -T {} | head -200'"
       ];
       colors = {
@@ -33,13 +33,13 @@
         "--layout=reverse"
       ];
       # The command that gets executed as the source for the CTRL-T keybinding
-      fileWidgetCommand = "fd --type f";
+      fileWidget.command = "fd --type f";
       # The options for CTRL-T
-      fileWidgetOptions = [
+      fileWidget.options = [
         "--preview 'bat --line-range :20 --color always {}'"
       ];
       # Command line options for the CTRL-R keybind
-      historyWidgetOptions = [
+      historyWidget.options = [
         "--scheme=history"
       ];
     };
