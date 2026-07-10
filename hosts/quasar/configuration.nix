@@ -54,6 +54,16 @@
       )
       (pkgs.writeTextFile
         {
+          name = "esp-udev-rules";
+          # See: https://wiki.archlinux.org/title/Udev#Allowing_regular_users_to_use_devices
+          text = ''
+            SUBSYSTEMS=="usb", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1001", MODE="0660", TAG+="uaccess"
+          '';
+          destination = "/etc/udev/rules.d/70-esp.rules";
+        }
+      )
+      (pkgs.writeTextFile
+        {
           name = "pixel10-udev-rules";
           # See: https://wiki.archlinux.org/title/Udev#Allowing_regular_users_to_use_devices
           text = ''
