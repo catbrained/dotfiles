@@ -59,7 +59,7 @@
         pkgs.godot_4
         pkgs.evince
         pkgs.calibre
-        pkgs.libreoffice-fresh
+        pkgs.libreoffice-stable
         pkgs.factorio-space-age
         pkgs.openttd
         pkgs.intiface-central
