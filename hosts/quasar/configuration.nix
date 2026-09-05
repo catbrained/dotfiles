@@ -39,6 +39,8 @@
       cpuModelId = "00A50F00";
     };
 
+    hardware.keyboard.qmk.enable = true;
+
     # services.udev.extraRules doesn't work with udev rules that use uaccess
     # See: https://github.com/NixOS/nixpkgs/issues/308681
     services.udev.packages = [
@@ -212,8 +214,7 @@
       xkb = {
         layout = "de";
         variant = "nodeadkeys";
-        # Make caps lock an additional esc, both shifts together enable caps lock
-        options = "caps:escape,shift:both_capslock";
+        options = "caps:escape";
       };
     };
 

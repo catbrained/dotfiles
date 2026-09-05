@@ -38,6 +38,9 @@
             "Hint Trigger" = "";
             "One Time Hint Trigger" = "";
           };
+          xcb.globalSection = {
+            "Allow Overriding System XKB Settings" = "False";
+          };
         };
       };
     };
