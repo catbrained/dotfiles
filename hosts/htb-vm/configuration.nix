@@ -136,7 +136,7 @@
         layout = "de";
         variant = "nodeadkeys";
         # Make caps lock an additional esc, both shifts together enable caps lock
-        options = "caps:escape,shift:both_capslock";
+        options = "caps:escape";
       };
     };
 
