@@ -76,6 +76,16 @@
       )
     ];
 
+    systemd.services.battery-saver = {
+      enable = true;
+      description = "Enable Lenovo Battery Conservation Mode";
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = "/bin/sh -c 'echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode'";
+      };
+    };
+
     boot = {
       # Mount a tmpfs on /tmp
       # Warning: Large Nix builds may fail if the tmpfs is too small!
