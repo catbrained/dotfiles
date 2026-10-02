@@ -55,6 +55,7 @@
         pkgs.inkscape
         pkgs.gimp
         pkgs.krita
+        pkgs.prusa-slicer
         pkgs.darktable
         pkgs.godot_4
         pkgs.evince
