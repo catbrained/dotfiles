@@ -7,6 +7,7 @@ let
     "steam-unwrapped"
     "teamspeak6-client"
     "factorio-space-age"
+    "via"
   ];
 in
 nixpkgs.lib.nixosSystem {

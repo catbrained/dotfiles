@@ -46,6 +46,7 @@
         pkgs.socat # socket communication utility
         pkgs.wl-clipboard
         pkgs.brightnessctl
+        pkgs.via
       ];
       packages.localhost-extra = [
         pkgs.vesktop
