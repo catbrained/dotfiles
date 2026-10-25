@@ -15,6 +15,9 @@ nixpkgs.lib.nixosSystem {
   modules = [
     {
       nixpkgs.config.packageOverrides = pkgs: {
+        linux-manual = pkgs.linux-manual.overrideAttrs {
+          env.srctree = ".";
+        };
         google-fonts = pkgs.google-fonts.overrideAttrs (finalAttrs: previousAttrs: {
           # "Sour Gummy" isn't in the version that's in nixpkgs yet.
           src = pkgs.fetchFromGitHub {
