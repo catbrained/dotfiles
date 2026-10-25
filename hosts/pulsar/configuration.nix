@@ -36,9 +36,6 @@
         configurationLimit = 10;
       };
       loader.efi.canTouchEfiVariables = true;
-      initrd.systemd = {
-        enable = true;
-      };
     };
 
     security.pki.caCertificateBlacklist = [
