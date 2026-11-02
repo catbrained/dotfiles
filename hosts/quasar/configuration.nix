@@ -19,8 +19,6 @@
       settings = {
         # Enable flakes and the new nix commands
         experimental-features = [ "nix-command" "flakes" ];
-        # Save disk space by using hardlinks for identical files in the store
-        auto-optimise-store = true;
       };
       # I'm using flakes, so I don't need this, right?
       channel.enable = false;

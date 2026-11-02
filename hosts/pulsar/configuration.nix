@@ -16,7 +16,6 @@
       package = pkgs.lixPackageSets.latest.lix;
       settings = {
         experimental-features = [ "nix-command" "flakes" ];
-        auto-optimise-store = true;
       };
       channel.enable = false;
       gc = {
