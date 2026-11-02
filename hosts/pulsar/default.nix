@@ -1,14 +1,6 @@
 { nixpkgs, disko, home-manager, ... }:
 nixpkgs.lib.nixosSystem {
   modules = [
-    {
-      nixpkgs.config.packageOverrides = pkgs:
-        {
-          linux-manual = pkgs.linux-manual.overrideAttrs {
-            env.srctree = ".";
-          };
-        };
-    }
     disko.nixosModules.disko
     ./configuration.nix
     ./hardware-configuration.nix
