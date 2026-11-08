@@ -8,6 +8,7 @@ let
     "teamspeak6-client"
     "factorio-space-age"
     "via"
+    "starsector"
   ];
 in
 nixpkgs.lib.nixosSystem {

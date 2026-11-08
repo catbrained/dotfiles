@@ -55,6 +55,7 @@
         pkgs.teamspeak6-client
         pkgs.inkscape
         pkgs.gimp
+        pkgs.starsector
         pkgs.krita
         pkgs.prusa-slicer
         pkgs.freecad
